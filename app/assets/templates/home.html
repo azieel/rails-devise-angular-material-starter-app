@@ -1,1 +1,23 @@
-<h3>youhou</h3>
+<!-- <md-toolbar layout="row">
+<button ng-click="toggleSidenav('left')" hide-gt-sm class="menuBtn">
+    <span class="visually-hidden">Menu</span>
+</button>
+<h3>Hello World</h3>
+</md-toolbar> -->
+<div id="bg-app" layout="column" layout-align="center center" class="full-height">
+    <md-card>
+        <md-toolbar class="padded">
+            <h5>Connexion</h5>
+        </md-toolbar>
+        <form name="userForm" class="padded">
+            <md-input-container>
+                <label>E-mail</label>
+                <input type="email" name="login_email" ng-model="user.email" required >
+            </md-input-container>
+            <md-input-container>
+                <label>Password</label>
+                <input type="password" name="login_password" ng-model="user.password" required minlength="8">
+            </md-input-container>
+        </form>
+    </md-card>
+</div>

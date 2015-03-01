@@ -14,3 +14,9 @@
  *= require angular-material
  *= require_self
  */
+.full-height{
+    height:100%;
+}
+.padded{
+    padding:10px;
+}
