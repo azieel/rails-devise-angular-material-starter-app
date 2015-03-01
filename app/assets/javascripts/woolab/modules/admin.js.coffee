@@ -3,10 +3,9 @@ angular.module('admins', [
 ])
 .config([ 'AuthProvider',
     (AuthProvider) ->
-        AuthProvider.registerPath('/admins/sign_up.json')
-        AuthProvider.registerMethod('GET')
-        AuthProvider.resourceName('admin')
-        AuthProvider.loginPath('/admins/sign_in.json')
+        AuthProvider.registerPath('/users/sign_up.json')
+        AuthProvider.registerMethod('POST')
+        AuthProvider.resourceName('user')
+        AuthProvider.loginPath('/users/sign_in.json')
         AuthProvider.loginMethod('POST')
-        AuthProvider.resourceName('admin')
 ])
