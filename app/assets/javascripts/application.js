@@ -18,3 +18,11 @@
 //= require angular-rails-templates
 //= require_tree .
 //= require_tree ../templates
+
+//=require woolab/app
+//= require_tree ./woolab/modules/
+//= require_tree ./woolab/directives/
+//= require_tree ./woolab/models/
+//= require_tree ./woolab/services/
+//= require_tree ./woolab/controllers/
+//= require woolab/router
