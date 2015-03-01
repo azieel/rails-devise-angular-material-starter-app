@@ -3,6 +3,7 @@
     'ui.router'
     'templates'
     'ngMaterial'
+    'admins'
     ])
 .run(->
     console.log 'WooLab app running'
