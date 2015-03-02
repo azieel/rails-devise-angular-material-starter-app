@@ -1,23 +1,26 @@
 @WooLab.controller("LoginCtrl", [
     '$scope', 'Auth', "$location"
     ($scope, Auth, $location)->
-        credentials = {
-            email: 'test@mail.com',
-            password: '52145214'
-        }
-        Auth.login(credentials).then(
-            (user) ->
-                console.log(user)
-                console.log(Auth.isAuthenticated())
-            (error) ->
-                console.log(Auth.isAuthenticated())
-                console.log(error)
-        )
-        $scope.$on('devise:login', (event, currentUser)->
-            $location.path('/home')
-        )
+        user = $scope.user = []
 
-        $scope.$on('devise:new-session', (event, currentUser)->
-            $location.path('/home')
-        )
+        $scope.authenticate_user = ()->
+            credentials = {
+                email: $scope.user.email,
+                password: $scope.user.password
+            }
+            Auth.login(credentials).then(
+                (user) ->
+                    console.log(user)
+                    console.log(Auth.isAuthenticated())
+                (error) ->
+                    console.log(Auth.isAuthenticated())
+                    console.log(error)
+            )
+            $scope.$on('devise:login', (event, currentUser)->
+                $location.path('/home')
+            )
+
+            $scope.$on('devise:new-session', (event, currentUser)->
+                $location.path('/home')
+            )
 ])

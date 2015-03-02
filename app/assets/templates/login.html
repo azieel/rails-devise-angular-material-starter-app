@@ -3,15 +3,24 @@
         <md-toolbar class="padded">
             <h5>Connexion</h5>
         </md-toolbar>
-        <form name="userForm" class="padded">
+        <form name="userForm" class="padded" ng-submit="authenticate_user()">
             <md-input-container>
                 <label>E-mail</label>
-                <input type="email" name="login_email" ng-model="user.email" required >
+                <input type="email" name="email" ng-model="user.email" required >
+                <div ng-messages="userForm.email.$error" ng-show="userForm.email.$invalid">
+                    <div ng-message="required">This is required!</div>
+                    <div ng-message="email">Your email address is invalid</div>
+                </div>
             </md-input-container>
             <md-input-container>
                 <label>Password</label>
-                <input type="password" name="login_password" ng-model="user.password" required minlength="8">
+                <input type="password" name="password" ng-model="user.password" required minlength="8">
+                    <div ng-messages="userForm.password.$error" ng-show="userForm.password.$invalid">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="minlength">Too short</div>
+                    </div>
             </md-input-container>
+            <input type="submit" value="connexion">
         </form>
     </md-card>
 </div>

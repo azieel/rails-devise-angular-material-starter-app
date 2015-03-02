@@ -19,6 +19,7 @@
 //= require angular-material
 //= require angular-rails-templates
 //= require angular-devise
+//= require angular-messages
 //= require_tree .
 //= require_tree ../templates
 

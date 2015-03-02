@@ -5,7 +5,9 @@
       "angular": "latest",
       "angular-ui-router": "latest",
       "angular-animate": "latest",
-      "angular-material": "latest"
+      "angular-material": "latest",
+      "angular-devise": "latest",
+      "angular-messages": "latest"
     }
   },
   "vendor": {

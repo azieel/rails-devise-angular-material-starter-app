@@ -2,6 +2,7 @@
     'ngAnimate'
     'ui.router'
     'templates'
+    'ngMessages'
     'ngMaterial'
     'admins'
     ])
