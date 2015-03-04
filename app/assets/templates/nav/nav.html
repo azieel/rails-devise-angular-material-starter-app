@@ -1,0 +1,13 @@
+<md-toolbar ng-controller="NavCtrl">
+  <div class="md-toolbar-tools">
+    <span>WooLab</span>
+    <!-- fill up the space between left and right area -->
+    <span flex></span>
+    <md-button  ng-show="signedIn()">
+      <a ng-click="logout()">Log Out</a>
+    </md-button>
+    <md-button  ng-show="!signedIn()">
+      <a href="/login">Log in</a>
+    </md-button>
+  </div>
+</md-toolbar>

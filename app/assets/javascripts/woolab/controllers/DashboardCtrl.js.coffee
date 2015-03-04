@@ -1,5 +1,7 @@
 @WooLab.controller("DashboardCtrl", [
-    '$scope', 'Auth', "$location"
-    ($scope, Auth, $location)->
-        console.log 'in Dashboard Ctrl'
+    '$scope', '$state', 'Auth'
+    ($scope, $state, Auth)->
+        console.log 'isAuthenticated: ' + Auth.isAuthenticated()
+        console.log "DashboardCtrl"
+        
 ])

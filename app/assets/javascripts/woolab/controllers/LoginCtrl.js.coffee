@@ -1,7 +1,14 @@
 @WooLab.controller("LoginCtrl", [
-    '$scope', 'Auth', "$location"
-    ($scope, Auth, $location)->
-        user = $scope.user = []
+    '$scope', 'Auth', "$state", "$http", "$mdToast"
+    ($scope, Auth, $state, $http, $mdToast)->
+        console.log 'LoginCtrl'
+
+        if Auth.isAuthenticated
+            $state.go('dashboard')
+        else
+            $scope.user.email = ""
+            $scope.user.password = ""
+
 
         $scope.authenticate_user = ()->
             credentials = {
@@ -10,17 +17,14 @@
             }
             Auth.login(credentials).then(
                 (user) ->
-                    console.log(user)
-                    console.log(Auth.isAuthenticated())
-                (error) ->
-                    console.log(Auth.isAuthenticated())
-                    console.log(error)
+                    console.log "success authenticate user"
+                    $mdToast.show($mdToast.simple().position('top right').content("success authenticate user"))
             )
             $scope.$on('devise:login', (event, currentUser)->
-                $location.path('/home')
+                $state.go('dashboard')
+            )
+            $scope.$on('devise:new-session', (event, currentUser)->
+                $state.go('dashboard')
             )
 
-            $scope.$on('devise:new-session', (event, currentUser)->
-                $location.path('/home')
-            )
 ])
