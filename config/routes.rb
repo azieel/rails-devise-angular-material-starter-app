@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
-  devise_for :users
   root 'application#index'
-  get '*path' => 'application#index'
+  devise_for :users, controllers: {
+    passwords: "devise_overrides/passwords"
+  }
+  #get '*path' => 'application#index'
   
 end
