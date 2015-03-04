@@ -17,7 +17,6 @@
             }
             Auth.login(credentials).then(
                 (user) ->
-                    console.log "success authenticate user"
                     $mdToast.show($mdToast.simple().position('top right').content("success authenticate user"))
             )
             $scope.$on('devise:login', (event, currentUser)->

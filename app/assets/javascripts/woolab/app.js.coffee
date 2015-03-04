@@ -14,7 +14,6 @@
 .run ($rootScope, $state, Auth, $mdToast) ->
     #401 Interceptor
     $rootScope.$on('devise:unauthorized', (event, reponse, deferred)->
-        console.log reponse
         errorMessage = reponse.data.error
         $mdToast.show($mdToast.simple().position('top right').content(errorMessage))
         $state.go('login')

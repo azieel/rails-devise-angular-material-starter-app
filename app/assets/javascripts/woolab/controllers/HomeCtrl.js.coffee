@@ -1,7 +1,5 @@
 @WooLab.controller("HomeCtrl", [
     '$scope', '$state', 'Auth'
-    ($scope, $state, Auth)->
-        
-        console.log "homectrl"
-        
+    ($scope, $state, Auth)->        
+        console.log "Homectrl"
 ])
