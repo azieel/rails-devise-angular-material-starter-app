@@ -7,7 +7,8 @@
       "angular-animate": "latest",
       "angular-material": "latest",
       "angular-devise": "latest",
-      "angular-messages": "latest"
+      "angular-messages": "latest",
+      "angular-translate": "latest"
     }
   },
   "vendor": {
