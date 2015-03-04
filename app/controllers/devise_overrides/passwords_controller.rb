@@ -1,4 +1,4 @@
-class DeviseOverrides::PasswordsController < Devise::SessionsController
+class DeviseOverrides::PasswordsController < Devise::PasswordsController
 
   respond_to :json
   respond_to :html, only: []

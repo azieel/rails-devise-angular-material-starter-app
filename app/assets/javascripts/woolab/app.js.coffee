@@ -6,6 +6,7 @@
     'ngMessages'
     'ngMaterial'
     'Devise'
+    'DevisePasswordsRecovery'
     ])
 .config( (AuthInterceptProvider) ->
     #Activate Http 401 Interceptor    

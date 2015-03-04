@@ -1,14 +1,16 @@
 @WooLab.controller("LoginCtrl", [
-    '$scope', 'Auth', "$state", "$http", "$mdToast"
-    ($scope, Auth, $state, $http, $mdToast)->
+    '$scope', 'Auth', "$state", "$http", "$mdToast", "passwordRecovery"
+    ($scope, Auth, $state, $http, $mdToast, passwordRecovery)->
         console.log 'LoginCtrl'
+
+        Auth.password_recover()
+        console.log Auth
 
         if Auth.isAuthenticated
             $state.go('dashboard')
         else
             $scope.user.email = ""
             $scope.user.password = ""
-
 
         $scope.authenticate_user = ()->
             credentials = {
