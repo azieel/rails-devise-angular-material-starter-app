@@ -19,5 +19,7 @@ angular.module 'DevisePasswordsRecovery', [
             (error)->
                 console.log "requete password merdique"
         )
+    extend.password_change = ()->
+        console.log "change password request"
     extend
 ]

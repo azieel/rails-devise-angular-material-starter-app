@@ -3,7 +3,7 @@
     ($scope, Auth, $state, $http, $mdToast, passwordRecovery)->
         console.log 'LoginCtrl'
 
-        Auth.password_recover()
+        Auth.password_change()
         console.log Auth
 
         if Auth.isAuthenticated
