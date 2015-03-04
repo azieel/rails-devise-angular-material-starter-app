@@ -15,6 +15,11 @@
             templateUrl: 'auth/password_recovery.html'
             controller: 'PasswordCtrl'
         })
+        $stateProvider.state('passwordChange', {
+            url: "/password_change/:reset_password_token"
+            templateUrl: 'auth/password_change.html'
+            controller: 'PasswordChangeCtrl'
+        })
         $stateProvider.state('dashboard', {
             url: "/dashboard"
             templateUrl: 'dashboard.html'
