@@ -14,14 +14,28 @@ angular.module 'DevisePasswordsRecovery', [
         config.data = {}
         config.data['user'] = {email: email}
         $http(config).then(
-            (reponse)->
-                $rootScope.$broadcast 'devise:new-password-token', reponse
-                reponse
+            (response)->
+                $rootScope.$broadcast 'devise:new-password-token', response
+                response
             (error)->
                 $rootScope.$broadcast 'devise:failed-password-token', error
                 error
         )
-    extend.password_change = ()->
-        console.log "change password request"
+    extend.password_change = (data)->
+        path = "/users/password.json"
+        config = {
+            method: "patch"
+            url: path
+        }
+        config.data = {}
+        config.data['user'] = data
+        $http(config).then(
+            (response)->
+                $rootScope.$broadcast 'devise:reset-password-success', response
+                response
+            (error)->
+                $rootScope.$broadcast 'devise:reset-password-failure', error
+                error
+        )
     extend
 ]

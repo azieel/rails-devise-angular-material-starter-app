@@ -5,21 +5,15 @@
 
         $scope.sendRecoveryMail = () ->
             email = $scope.user.email
-            console.log "la"
-            Auth.password_recover(email).then(
-                (success)->
-                    console.log success
-                (error)->
-                    console.log "foireu mail pas envoyé"
-            )
+            Auth.password_recover(email)
 
-        $rootScope.$on('devise:failed-password-token', (event, reponse)->
+        $rootScope.$on('devise:failed-password-token', (event, response)->
             errorMessage = "Aucun compte n'est rataché à cette adresse email"
-            $mdToast.show($mdToast.simple().position('top right').theme('purple').content(errorMessage))
+            $mdToast.show($mdToast.simple().position('top right').content(errorMessage))
         )
-        $rootScope.$on('devise:new-password-token', (event, reponse)->
+        $rootScope.$on('devise:new-password-token', (event, response)->
             sucessMessage = "Les instructions de réinitialisation de mot de passe vous ont été envoyé par mail"
-            $mdToast.show($mdToast.simple().position('top right').theme('purple').content(sucessMessage))
+            $mdToast.show($mdToast.simple().position('top right').content(sucessMessage))
         )
 
 ])
