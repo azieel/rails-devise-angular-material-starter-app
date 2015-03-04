@@ -12,12 +12,14 @@ angular.module 'DevisePasswordsRecovery', [
             url: path
         }
         config.data = {}
-        config.data['user'] = {email: "test@mail.com"}
+        config.data['user'] = {email: email}
         $http(config).then(
             (reponse)->
-                console.log "requete password ok"
+                $rootScope.$broadcast 'devise:new-password-token', reponse
+                reponse
             (error)->
-                console.log "requete password merdique"
+                $rootScope.$broadcast 'devise:failed-password-token', error
+                error
         )
     extend.password_change = ()->
         console.log "change password request"
