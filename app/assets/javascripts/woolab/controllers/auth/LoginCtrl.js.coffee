@@ -3,10 +3,8 @@
     ($scope, Auth, $state, $http, $mdToast, passwordRecovery)->
         console.log 'LoginCtrl'
 
-        Auth.password_change()
-        console.log Auth
-
         if Auth.isAuthenticated
+            $mdToast.show($mdToast.simple().position('top right').content("Vous êtes déja connecté!"))
             $state.go('dashboard')
         else
             $scope.user.email = ""

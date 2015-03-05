@@ -17,7 +17,6 @@
             Auth.password_change(data)
 
         $rootScope.$on('devise:reset-password-failure', (event, response)->
-            console.log response
             errorMessage = "Token invalide. Echec du changement de mot de passe."
             $mdToast.show($mdToast.simple().position('top right').content(errorMessage))
             $state.go('login')
