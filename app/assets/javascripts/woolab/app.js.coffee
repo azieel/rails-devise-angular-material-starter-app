@@ -1,19 +1,11 @@
 #App declaration
 @WooLab = angular.module('WooLab',[
-    'ngAnimate'
-    'ui.router'
-    'templates'
-    'ngMessages'
-    'ngMaterial'
-    'Devise'
-    'DevisePasswordsRecovery'
+    'BaseModules'
+    'AuthModules'
+    'TranslateModules'
     ])
-.config( (AuthInterceptProvider) ->
-    #Activate Http 401 Interceptor    
-    AuthInterceptProvider.interceptAuth(true)
-)
 .run ($rootScope, $state, Auth, $mdToast) ->
-    #401 Interceptor
+    #Initialize 401 Interceptor on devise:unauthorized event
     $rootScope.$on('devise:unauthorized', (event, reponse, deferred)->
         errorMessage = reponse.data.error
         $mdToast.show($mdToast.simple().position('top right').content(errorMessage))

@@ -1,4 +1,4 @@
-
+#extend Devise-angular service to add reset password features
 angular.module 'DevisePasswordsRecovery', [
     'Devise'
 ]
