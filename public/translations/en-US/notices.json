@@ -1,0 +1,6 @@
+{
+    "AUTH": {
+        "SUCCESS_LOGIN": "You are logged in !",
+        "FAILURE_LOGIN": "Must be logged to continue !"
+    }
+}

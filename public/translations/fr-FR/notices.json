@@ -1,0 +1,6 @@
+{
+    "AUTH": {
+        "SUCCESS_LOGIN": "Vous êtes bien connecté !",
+        "FAILURE_LOGIN": "Vous devez être connecté pour continuer"
+    }
+}

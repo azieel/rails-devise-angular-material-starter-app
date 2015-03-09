@@ -1,9 +1,11 @@
-@WooLab.controller("LoginCtrl", [
-    '$scope', 'Auth', "$state", "$http", "$mdToast", "passwordRecovery"
-    ($scope, Auth, $state, $http, $mdToast, passwordRecovery)->
+angular.module('AuthModule').controller("LoginCtrl", [
+    '$scope', 'Auth', "$state", "$http", "$mdToast", "passwordRecoveryService", "$translate", "$translatePartialLoader", "$filter"
+    ($scope, Auth, $state, $http, $mdToast, passwordRecoveryService, $translate, $translatePartialLoader, $filter)->
         console.log 'LoginCtrl'
 
-        if Auth.isAuthenticated
+        $scope.user = {}
+        
+        if Auth.isAuthenticated()
             $mdToast.show($mdToast.simple().position('top right').content("Vous êtes déja connecté!"))
             $state.go('dashboard')
         else
@@ -17,7 +19,8 @@
             }
             Auth.login(credentials).then(
                 (user) ->
-                    $mdToast.show($mdToast.simple().position('top right').content("success authenticate user"))
+                    message = $translate.instant('messages.success_authenticate_user')
+                    $mdToast.show($mdToast.simple().position('top right').content(message))
             )
             $scope.$on('devise:login', (event, currentUser)->
                 $state.go('dashboard')

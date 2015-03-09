@@ -1,6 +1,6 @@
-@WooLab.controller("PasswordCtrl", [
-    '$scope', 'Auth', "$state", "$http", "$mdToast", "passwordRecovery", "$rootScope"
-    ($scope, Auth, $state, $http, $mdToast, passwordRecovery, $rootScope)->
+angular.module('AuthModule').controller("PasswordCtrl", [
+    '$scope', 'Auth', "$state", "$http", "$mdToast", "passwordRecoveryService", "$rootScope"
+    ($scope, Auth, $state, $http, $mdToast, passwordRecoveryService, $rootScope)->
         console.log 'PasswordCtrl'        
 
         $scope.sendRecoveryMail = () ->

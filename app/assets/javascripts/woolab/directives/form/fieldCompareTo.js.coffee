@@ -1,6 +1,5 @@
 #Directive to compare two fields values (like password confirmation)
-
-@WooLab.directive("fieldCompareTo", () ->
+angular.module('WooLab').directive("fieldCompareTo", () ->
     require: 
         "ngModel"
     scope:

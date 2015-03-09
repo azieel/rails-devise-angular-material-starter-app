@@ -1,5 +1,5 @@
-@WooLab.controller("PasswordChangeCtrl", [
-    '$scope', 'Auth', "$state", "$http", "$mdToast", "passwordRecovery", "$rootScope", "$stateParams"
+angular.module('AuthModule').controller("PasswordChangeCtrl", [
+    '$scope', 'Auth', "$state", "$http", "$mdToast", "passwordRecoveryService", "$rootScope", "$stateParams"
     ($scope, Auth, $state, $http, $mdToast, passwordRecovery, $rootScope, $stateParams)->
         console.log 'PasswordChangeCtrl'        
 

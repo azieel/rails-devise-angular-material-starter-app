@@ -1,8 +1,5 @@
 #extend Devise-angular service to add reset password features
-angular.module 'DevisePasswordsRecovery', [
-    'Devise'
-]
-.factory 'passwordRecovery', ['$rootScope', 'Auth', '$http', ($rootScope, Auth, $http)->
+angular.module('AuthModule').factory 'passwordRecoveryService', ['$rootScope', 'Auth', '$http', ($rootScope, Auth, $http)->
     extend = angular.extend (Auth)
     extend.password_recover = (email)->
         email = email || {}

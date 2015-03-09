@@ -1,4 +1,5 @@
-angular.module('BaseModules', [
+#Require angular modules libs
+angular.module('BaseModule', [
     'ngAnimate'
     'ui.router'
     'templates'
