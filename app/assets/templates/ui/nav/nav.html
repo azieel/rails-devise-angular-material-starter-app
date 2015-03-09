@@ -4,10 +4,10 @@
     <!-- fill up the space between left and right area -->
     <span flex></span>
     <md-button  ng-show="signedIn()">
-      <a ng-click="logout()">Log Out</a>
+      <a ng-click="logout()" translate>{{ 'auth.logout_link' }}</a>
     </md-button>
     <md-button  ng-show="!signedIn()">
-      <a href="/login">Log in</a>
+      <a href="/login" translate>{{ 'auth.login_link' }}</a>
     </md-button>
   </div>
 </md-toolbar>

@@ -14,9 +14,11 @@
  *= require angular-material
  *= require_self
  */
-.full-height{
-    height:100%;
-}
 .padded{
     padding:10px;
+}
+.form-error{
+    color: rgb(244,67,54);
+    font-size: 12px;
+    line-height: 24px;
 }
