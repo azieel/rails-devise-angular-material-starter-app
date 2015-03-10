@@ -1,12 +1,12 @@
 angular.module('BaseModule').controller("NavCtrl", [
-    '$scope', 'Auth', "$state", "$mdToast", "$translate", "$translatePartialLoader"
-    ($scope, Auth, $state, $mdToast, $translate, $translatePartialLoader)->
+    '$scope', 'Auth', "$state", "customToast", "$translate", "$translatePartialLoader"
+    ($scope, Auth, $state, customToast, $translate, $translatePartialLoader)->
 
         $scope.signedIn = -> Auth.isAuthenticated()
         $scope.logout = -> Auth.logout()
             
         $scope.$on('devise:logout', (event, oldCurrentUser) ->
-            $mdToast.show($mdToast.simple().position('top right').content("success logout user"))
+            customToast("error", "auth.toast_messages.logout_success")
             $state.go('home')
         )
 ])

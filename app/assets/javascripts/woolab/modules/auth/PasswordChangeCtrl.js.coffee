@@ -1,14 +1,13 @@
 angular.module('AuthModule').controller("PasswordChangeCtrl", [
-    '$scope', 'Auth', "$state", "$http", "$mdToast", "passwordRecoveryService", "$rootScope", "$stateParams"
-    ($scope, Auth, $state, $http, $mdToast, passwordRecovery, $rootScope, $stateParams)->
+    '$scope', 'Auth', "$state", "customToast", "passwordRecoveryService", "$rootScope", "$stateParams"
+    ($scope, Auth, $state, customToast, passwordRecovery, $rootScope, $stateParams)->
         console.log 'PasswordChangeCtrl'
 
         $scope.user = {}
         $scope.formError = false
 
         if $stateParams.reset_password_token == ""
-            msg = "Token absent, verifiez que vous avez bien utilisé le lien présent dans le mail de reinitialisation du mot de passe"
-            $mdToast.show($mdToast.simple().position('top right').content(msg))
+            customToast("error", 'auth.toast_messages.no_token_in_url')
             $state.go('passwordRecovery')
 
         $scope.passwordChange = () ->
@@ -23,13 +22,11 @@ angular.module('AuthModule').controller("PasswordChangeCtrl", [
                 $scope.formError = true
 
         $rootScope.$on('devise:reset-password-failure', (event, response)->
-            errorMessage = "Token invalide. Echec du changement de mot de passe."
-            $mdToast.show($mdToast.simple().position('top right').content(errorMessage))
+            customToast("error", 'auth.toast_messages.password_change_error')
             $state.go('login')
         )
         $rootScope.$on('devise:reset-password-success', (event, response)->
-            sucessMessage = "Le mot de passe de votre compte a bien été changé."
-            $mdToast.show($mdToast.simple().position('top right').content(sucessMessage))
+            customToast("success", 'auth.toast_messages.password_change_success')
             $state.go('dashboard')
         )
 ])

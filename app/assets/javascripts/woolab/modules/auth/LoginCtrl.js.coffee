@@ -11,22 +11,20 @@ angular.module('AuthModule').controller("LoginCtrl", [
         else
             $scope.user.email = ""
             $scope.user.password = ""
-        console.log Auth.isAuthenticated()
 
         $scope.authenticate_user = ()->
             credentials = {
                 email: $scope.user.email,
                 password: $scope.user.password
             }
-            Auth.login(credentials).then(
-                (user) ->
-                    customToast("success", 'auth.toast_messages.login_success')
-            )
-            $scope.$on('devise:login', (event, currentUser)->
-                $state.go('dashboard')
-            )
-            $scope.$on('devise:new-session', (event, currentUser)->
-                $state.go('dashboard')
-            )
+            Auth.login(credentials)
+
+        $scope.$on('devise:login', (event, currentUser)->
+            $state.go('dashboard')
+            customToast("success", 'auth.toast_messages.login_success')        
+        )
+        $scope.$on('devise:new-session', (event, currentUser)->
+            $state.go('dashboard')
+        )
 
 ])

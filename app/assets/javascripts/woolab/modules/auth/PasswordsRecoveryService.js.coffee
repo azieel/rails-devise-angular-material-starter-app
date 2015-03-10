@@ -24,7 +24,6 @@ angular.module('AuthModule').factory 'passwordRecoveryService', ['$rootScope', '
             method: "patch"
             url: path
         }
-        console.log data
         config.data = {}
         config.data['user'] = data
         $http(config).then(

@@ -8,14 +8,10 @@ angular.module('AuthModule').controller("PasswordCtrl", [
             Auth.password_recover(email)
 
         $rootScope.$on('devise:failed-password-token', (event, response)->
-            $translate('auth.toast_messages.email_not_found').then( (translation) ->
-                customToast("error", translation)
-            )
+            customToast("error", 'auth.toast_messages.email_not_found')
         )
         $rootScope.$on('devise:new-password-token', (event, response)->
-            $translate('auth.toast_messages.password_instructions_send').then( (translation) ->
-                customToast("success", translation)
-            )
+            customToast("success", 'auth.toast_messages.password_instructions_send')
             $state.go('login')
         )
 
