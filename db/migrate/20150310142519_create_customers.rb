@@ -10,7 +10,9 @@ class CreateCustomers < ActiveRecord::Migration
         t.string :country
         t.integer :tel
 
-      t.timestamps
+        t.belongs_to :compagny, index:true        
+
+        t.timestamps
     end
   end
 end
