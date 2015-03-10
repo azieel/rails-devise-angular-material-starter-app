@@ -7,7 +7,7 @@ angular.module('AuthModule').controller("LoginCtrl", [
         
         if Auth.isAuthenticated()
             $translate('auth.toast_messages.already_login').then( (translation) ->
-                customToast("success", translation)
+                customToast("notice", translation)
             )
             $state.go('dashboard')
         else

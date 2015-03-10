@@ -1,6 +1,6 @@
 angular.module('AuthModule').controller("PasswordCtrl", [
-    '$scope', 'Auth', "$state", "$http", "$mdToast", "passwordRecoveryService", "$rootScope"
-    ($scope, Auth, $state, $http, $mdToast, passwordRecoveryService, $rootScope)->
+    '$scope', 'Auth', "$state", "customToast", "passwordRecoveryService", "$rootScope", "$translate"
+    ($scope, Auth, $state, customToast, passwordRecoveryService, $rootScope, $translate)->
         console.log 'PasswordCtrl'        
 
         $scope.sendRecoveryMail = () ->
@@ -8,12 +8,15 @@ angular.module('AuthModule').controller("PasswordCtrl", [
             Auth.password_recover(email)
 
         $rootScope.$on('devise:failed-password-token', (event, response)->
-            errorMessage = "Aucun compte n'est rataché à cette adresse email"
-            $mdToast.show($mdToast.simple().position('top right').content(errorMessage))
+            $translate('auth.toast_messages.email_not_found').then( (translation) ->
+                customToast("error", translation)
+            )
         )
         $rootScope.$on('devise:new-password-token', (event, response)->
-            sucessMessage = "Les instructions de réinitialisation de mot de passe vous ont été envoyé par mail"
-            $mdToast.show($mdToast.simple().position('top right').content(sucessMessage))
+            $translate('auth.toast_messages.password_instructions_send').then( (translation) ->
+                customToast("success", translation)
+            )
+            $state.go('login')
         )
 
 ])
