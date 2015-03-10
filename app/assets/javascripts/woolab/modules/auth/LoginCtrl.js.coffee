@@ -4,13 +4,14 @@ angular.module('AuthModule').controller("LoginCtrl", [
         console.log 'LoginCtrl'
 
         $scope.user = {}
-        
-        if Auth.isAuthenticated()
-            customToast("notice", 'auth.toast_messages.already_login')
-            $state.go('dashboard')
-        else
-            $scope.user.email = ""
-            $scope.user.password = ""
+        Auth.currentUser().then( ->
+            if Auth.isAuthenticated()
+                $state.go('dashboard')
+                customToast("notice", 'auth.toast_messages.already_login')
+            else
+                $scope.user.email = ""
+                $scope.user.password = ""
+        )
 
         $scope.authenticate_user = ()->
             credentials = {
@@ -21,10 +22,10 @@ angular.module('AuthModule').controller("LoginCtrl", [
 
         $scope.$on('devise:login', (event, currentUser)->
             $state.go('dashboard')
-            customToast("success", 'auth.toast_messages.login_success')        
         )
         $scope.$on('devise:new-session', (event, currentUser)->
             $state.go('dashboard')
+            customToast("success", 'auth.toast_messages.login_success')
         )
 
 ])
