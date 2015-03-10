@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Admin, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+    describe 'instantiation' do
+        let!(:admin) { build(:admin) }
+
+        it 'instantiates an admin' do
+            expect(admin.class.name).to eq("Admin")
+        end
+    end
 end
