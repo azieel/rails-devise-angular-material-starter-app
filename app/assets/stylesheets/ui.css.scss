@@ -1,0 +1,22 @@
+.padded{
+    padding:10px;
+}
+.form-error{
+    color: rgb(244,67,54);
+    font-size: 12px;
+    line-height: 24px;
+}
+md-toast{
+    &.toast_success{
+        background-color:green;
+    }
+    &.toast_notice{
+        background-color:blue;
+    }
+    &.toast_warning{
+        background-color:orange;
+    }
+    &.toast_error{
+        background-color:red;
+    }
+}

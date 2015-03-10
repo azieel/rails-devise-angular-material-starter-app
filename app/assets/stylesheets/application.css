@@ -12,13 +12,6 @@
  *
  *= require_tree .
  *= require angular-material
+ *= resuire ui
  *= require_self
  */
-.padded{
-    padding:10px;
-}
-.form-error{
-    color: rgb(244,67,54);
-    font-size: 12px;
-    line-height: 24px;
-}

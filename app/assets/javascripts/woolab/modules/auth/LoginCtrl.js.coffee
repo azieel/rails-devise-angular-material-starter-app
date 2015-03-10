@@ -1,12 +1,14 @@
 angular.module('AuthModule').controller("LoginCtrl", [
-    '$scope', 'Auth', "$state", "$http", "$mdToast", "passwordRecoveryService", "$translate", "$translatePartialLoader", "$filter"
-    ($scope, Auth, $state, $http, $mdToast, passwordRecoveryService, $translate, $translatePartialLoader, $filter)->
+    '$scope', 'Auth', "$state", "$http", "customToast", "passwordRecoveryService", "$translate", "$translatePartialLoader", "$filter"
+    ($scope, Auth, $state, $http, customToast, passwordRecoveryService, $translate, $translatePartialLoader, $filter)->
         console.log 'LoginCtrl'
 
         $scope.user = {}
         
         if Auth.isAuthenticated()
-            $mdToast.show($mdToast.simple().position('top right').content("Vous êtes déja connecté!"))
+            $translate('auth.toast_messages.already_login').then( (translation) ->
+                customToast("success", translation)
+            )
             $state.go('dashboard')
         else
             $scope.user.email = ""
@@ -19,8 +21,9 @@ angular.module('AuthModule').controller("LoginCtrl", [
             }
             Auth.login(credentials).then(
                 (user) ->
-                    message = $translate.instant('messages.success_authenticate_user')
-                    $mdToast.show($mdToast.simple().position('top right').content(message))
+                    $translate('auth.toast_messages.login_success').then( (translation) ->
+                        customToast("success", translation)
+                    )
             )
             $scope.$on('devise:login', (event, currentUser)->
                 $state.go('dashboard')
