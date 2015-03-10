@@ -1,0 +1,9 @@
+{
+    "ui": {
+        "languages": {
+            "placeholder": "Langues",
+            "english": "Anglais",
+            "french": "Francais"
+        }
+    }
+}

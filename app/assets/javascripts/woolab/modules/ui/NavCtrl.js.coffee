@@ -4,6 +4,8 @@ angular.module('BaseModule').controller("NavCtrl", [
 
         $scope.signedIn = -> Auth.isAuthenticated()
         $scope.logout = -> Auth.logout()
+        $scope.changeLanguage = (language_key)->
+            $translate.use(language_key)
             
         $scope.$on('devise:logout', (event, oldCurrentUser) ->
             customToast("error", "auth.toast_messages.logout_success")
