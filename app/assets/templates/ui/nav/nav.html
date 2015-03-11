@@ -4,14 +4,17 @@
     <!-- fill up the space between left and right area -->
     <span flex></span>
     <md-select ng-model="language">
-      <md-select-label translate>{{ 'ui.languages.placeholder' }}</md-select-label>
+      <md-select-label translate><i class="mdi mdi-language"></i></md-select-label>
       <md-option value="fr-FR" ng-click="changeLanguage('fr-FR')" ng-selected="selected" translate>{{ 'ui.languages.french' }}</md-option>
       <md-option value="en-US" ng-click="changeLanguage('en-US')" translate>{{ 'ui.languages.english' }}</md-option>
     </md-select>
-    <i class="mdi mdi-bell"></i>
-    <md-button  ng-show="signedIn()">
-      <a ng-click="logout()" translate>{{ 'auth.logout_link' }}</a>
-    </md-button>
+    <md-select ng-model="auth">
+      <md-select-label translate><i class="mdi mdi-settings"></i></md-select-label>
+        <md-option  ng-show="signedIn()" value="logout">
+          <a ng-click="logout()"  translate>{{ 'auth.logout_link' }}</a>
+        </md-option>
+      </md-select>
+
     <md-button  ng-show="!signedIn()">
       <a href="/login" translate>{{ 'auth.login_link' }}</a>
     </md-button>

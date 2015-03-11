@@ -10,7 +10,7 @@
       "angular-messages": "latest",
       "angular-translate": "latest",
       "angular-translate-loader-partial": "latest",
-      "mdi": "latest"
+      "material-design-iconic-font": "latest"
     }
   },
   "vendor": {
