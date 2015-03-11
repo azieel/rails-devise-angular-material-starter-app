@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require angular-material
+ *= require mdi/css/materialdesignicons.min
  *= resuire ui
  *= require_self
+ *= 
  */

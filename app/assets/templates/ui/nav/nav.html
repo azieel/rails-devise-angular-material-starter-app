@@ -8,6 +8,7 @@
       <md-option value="fr-FR" ng-click="changeLanguage('fr-FR')" ng-selected="selected" translate>{{ 'ui.languages.french' }}</md-option>
       <md-option value="en-US" ng-click="changeLanguage('en-US')" translate>{{ 'ui.languages.english' }}</md-option>
     </md-select>
+    <i class="mdi mdi-bell"></i>
     <md-button  ng-show="signedIn()">
       <a ng-click="logout()" translate>{{ 'auth.logout_link' }}</a>
     </md-button>

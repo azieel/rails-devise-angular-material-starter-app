@@ -9,7 +9,8 @@
       "angular-devise": "latest",
       "angular-messages": "latest",
       "angular-translate": "latest",
-      "angular-translate-loader-partial": "latest"
+      "angular-translate-loader-partial": "latest",
+      "mdi": "latest"
     }
   },
   "vendor": {
