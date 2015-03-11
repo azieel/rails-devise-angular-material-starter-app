@@ -6,3 +6,7 @@ angular.module('BaseModule', [
     'ngMessages'
     'ngMaterial'
 ])
+.config ["$mdThemingProvider"
+    ($mdThemingProvider) ->
+        $mdThemingProvider.theme('default').primaryPalette('blue-grey').accentPalette('orange');
+]
