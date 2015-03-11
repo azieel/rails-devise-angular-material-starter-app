@@ -1,8 +1,11 @@
 //REQUIRE ALL LIBS AND MAIN APP FILE
 
-// Require libs for app
+// Require jQuery libs
 //= require jquery
 //= require jquery_ujs
+//= require_tree ./jquery_libs
+
+// Require libs for app
 //= require angular
 //= require angular-animate
 //= require angular-ui-router
@@ -15,9 +18,7 @@
 //= require angular-translate-loader-partial
 //= require_self
 
+
 // Require app main files
 //= require_tree ../templates
-
-
-
 //= require_tree ./woolab

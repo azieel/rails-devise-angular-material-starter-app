@@ -1,7 +1,6 @@
 angular.module('BaseModule').controller("BaseCtrl", [
     '$scope', '$state', 'Auth'
     ($scope, $state, Auth)->        
-        console.log "BaseCtrl"
         Auth.currentUser().then(
             (user) ->
                 console.log is_logged = Auth.isAuthenticated()
@@ -17,4 +16,5 @@ angular.module('BaseModule').controller("BaseCtrl", [
                     $scope.navTemplate = 'ui/nav/nav-not-logged.html'
                     $state.go('login')
         )
+        console.log "BaseCtrl"
 ])

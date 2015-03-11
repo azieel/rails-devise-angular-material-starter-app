@@ -4,19 +4,19 @@
     <!-- fill up the space between left and right area -->
     <span flex></span>
     
-    <md-select ng-model="language">
-      <md-select-label translate><img class="flag_img" ng-src="assets/{{ languageKey }}.svg" /></md-select-label>
-      <md-option value="fr-FR" ng-click="changeLanguage('fr-FR')" ng-selected="selected" ><img class="flag_img" ng-src="assets/fr-FR.svg" /></md-option>
-      <md-option value="en-US" ng-click="changeLanguage('en-US')" ><img class="flag_img" ng-src="assets/en-US.svg" /></md-option>
-    </md-select>
+    <dropdown-button data-activates="language_dropdown">
+      <img class="flag_img" ng-src='assets/{{ languageKey }}.svg' />
+    </dropdown-button>
+    <ul id="language_dropdown" class="dropdown-content">
+      <li><a value="fr-FR" ng-click="changeLanguage('fr-FR')"><img class="flag_img" ng-src="assets/fr-FR.svg" /></a></li>
+      <li><a value="en-US" ng-click="changeLanguage('en-US')"><img class="flag_img" ng-src="assets/en-US.svg" /></a></li>
+    </ul>
 
-    <md-select ng-model="auth">
-      <md-select-label class="no-arrow" translate><i class="md md-settings"></i></md-select-label>
-        <div><a ng-click="logout()"  translate>{{ 'auth.logout_link' }}</a></div>
-        <div><a ng-click="logout()"  translate>blabla</a></div>
-        <div><a ng-click="logout()"  translate>bloblo</a></div>
-        <div><a ng-click="logout()"  translate>blibli</a></div>
-    </md-select>
-
+    <dropdown-button data-activates="account_dropdown">
+      <i class="md md-account-box"></i>
+    </dropdown-button>
+    <ul id="account_dropdown" class="dropdown-content">
+      <li><a ng-click="logout()" translate>{{ 'auth.logout_link' }}</a></li>
+    </ul>
   </div>
 </md-toolbar>
