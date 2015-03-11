@@ -1,9 +1,8 @@
 angular.module('WooLab').config([ '$stateProvider', '$urlRouterProvider', '$locationProvider', 'AuthProvider'
     ($stateProvider, $urlRouterProvider, $locationProvider, AuthProvider) ->
-        $stateProvider.state('home', {
+        $stateProvider.state('main', {
             url: "/"
-            templateUrl: 'home.html'
-            controller: 'HomeCtrl'
+            template: ''
         })
         $stateProvider.state('dashboard', {
             url: "/dashboard"
@@ -16,4 +15,3 @@ angular.module('WooLab').config([ '$stateProvider', '$urlRouterProvider', '$loca
         $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode(true);
 ])
-

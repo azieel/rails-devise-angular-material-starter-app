@@ -15,6 +15,5 @@ angular.module('AuthModule').config([ '$stateProvider', '$urlRouterProvider', '$
             templateUrl: 'auth/password_change.html'
             controller: 'PasswordChangeCtrl'
         })
-        $locationProvider.html5Mode(true);
 ])
 

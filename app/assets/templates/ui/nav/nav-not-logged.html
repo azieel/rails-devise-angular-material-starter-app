@@ -6,18 +6,11 @@
     
     <md-select ng-model="language">
       <md-select-label translate><i class="md md-language"></i></md-select-label>
-      <md-option value="fr-FR" ng-click="changeLanguage('fr-FR')" ng-selected="selected" translate>{{ 'ui.languages.french' }}</md-option>
+      <md-option value="fr-FR" ng-click="changeLanguage('fr-FR')" translate>{{ 'ui.languages.french' }}</md-option>
       <md-option value="en-US" ng-click="changeLanguage('en-US')" translate>{{ 'ui.languages.english' }}</md-option>
     </md-select>
 
-    <md-select ng-model="auth" ng-show="signedIn()">
-      <md-select-label class="no-arrow" translate><i class="md md-settings"></i></md-select-label>
-      <md-option value="logout">
-        <a ng-click="logout()"  translate>{{ 'auth.logout_link' }}</a>
-      </md-option>
-    </md-select>
-
-    <md-button  ng-show="!signedIn()">
+    <md-button>
       <a href="/login" translate>{{ 'auth.login_link' }}</a>
     </md-button>
 

@@ -5,16 +5,17 @@
     <span flex></span>
     
     <md-select ng-model="language">
-      <md-select-label translate><i class="md md-language"></i></md-select-label>
-      <md-option value="fr-FR" ng-click="changeLanguage('fr-FR')" ng-selected="selected" translate>{{ 'ui.languages.french' }}</md-option>
-      <md-option value="en-US" ng-click="changeLanguage('en-US')" translate>{{ 'ui.languages.english' }}</md-option>
+      <md-select-label translate><img class="flag_img" ng-src="assets/{{ languageKey }}.svg" /></md-select-label>
+      <md-option value="fr-FR" ng-click="changeLanguage('fr-FR')" ng-selected="selected" ><img class="flag_img" ng-src="assets/fr-FR.svg" /></md-option>
+      <md-option value="en-US" ng-click="changeLanguage('en-US')" ><img class="flag_img" ng-src="assets/en-US.svg" /></md-option>
     </md-select>
 
     <md-select ng-model="auth">
       <md-select-label class="no-arrow" translate><i class="md md-settings"></i></md-select-label>
-      <md-option value="logout">
-        <a ng-click="logout()"  translate>{{ 'auth.logout_link' }}</a>
-      </md-option>
+        <div><a ng-click="logout()"  translate>{{ 'auth.logout_link' }}</a></div>
+        <div><a ng-click="logout()"  translate>blabla</a></div>
+        <div><a ng-click="logout()"  translate>bloblo</a></div>
+        <div><a ng-click="logout()"  translate>blibli</a></div>
     </md-select>
 
   </div>
