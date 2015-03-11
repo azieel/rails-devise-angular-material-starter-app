@@ -6,6 +6,10 @@
     font-size: 12px;
     line-height: 24px;
 }
+
+//=================================================================
+//  Toasts colors
+//=================================================================
 md-toast{
     &.toast_success{
         background-color:green;
@@ -20,6 +24,19 @@ md-toast{
         background-color:red;
     }
 }
-#dashboard-navigation{
+//=================================================================
+//  Main navigation
+//=================================================================
+#app-navigation{
     z-index:10;
+    md-select{
+        margin-top:0;
+        md-select-label{
+            font-size:2em;
+            border-bottom:0px solid;
+            .md-select-icon {
+                display:none;
+            }
+        }
+    }
 }
