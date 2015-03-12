@@ -5,15 +5,25 @@
     <span flex></span>
     
     <dropdown-button data-activates="language_dropdown">
-      <img class="flag_img" ng-src='assets/{{ languageKey }}.svg' />
+      <i class="md md-language nav-icon"></i>
     </dropdown-button>
     <ul id="language_dropdown" class="dropdown-content">
-      <li><a value="fr-FR" ng-click="changeLanguage('fr-FR')"><img class="flag_img" ng-src="assets/fr-FR.svg" /></a></li>
-      <li><a value="en-US" ng-click="changeLanguage('en-US')"><img class="flag_img" ng-src="assets/en-US.svg" /></a></li>
+      <li>
+        <a value="fr-FR" ng-click="changeLanguage('fr-FR')" >
+          <img class="flag_img" ng-src="assets/fr-FR.svg" />
+          <span class="flag_label" translate>{{ 'ui.languages.french' }}</span>
+        </a>
+      </li>
+      <li>
+        <a value="en-US" ng-click="changeLanguage('en-US')" >
+          <img class="flag_img" ng-src="assets/en-US.svg" />
+          <span class="flag_label" translate>{{ 'ui.languages.english' }}</span>
+        </a>
+      </li>
     </ul>
 
     <dropdown-button data-activates="account_dropdown">
-      <i class="md md-account-box"></i>
+      <i class="md md-account-circle nav-icon"></i>
     </dropdown-button>
     <ul id="account_dropdown" class="dropdown-content">
       <li><a ng-click="logout()" translate>{{ 'auth.logout_link' }}</a></li>

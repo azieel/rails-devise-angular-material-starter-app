@@ -29,29 +29,16 @@ md-toast{
 //=================================================================
 #app-navigation{
     z-index:10;
-    md-select{
-        margin-top:0;
-        md-select-label{
-            font-size:2em;
-            border-bottom:0px solid;
-            .md-select-icon {
-                display:none;
-            }
-        }
+    .nav-icon{
+        font-size:1.5em;
     }
-}
-div.flag_placeholder{
-    background-size:30px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    width:30px;
-    height:30px;
 }
 
 //=================================================================
 //  Dropdowns buttons
 //=================================================================
 dropdown-button{
+    font-size:2em;
     cursor:pointer;
 }
 .dropdown-content {
@@ -78,7 +65,7 @@ dropdown-button{
         }
         & > a, & > span {
             display: block;
-            padding: 1rem 1rem;
+            padding: 1rem 0.5rem;
             color: rgba(0, 0, 0, 0.87);
         }
     }
@@ -89,4 +76,10 @@ dropdown-button{
 img.flag_img{
     width:30px;
     height:23px;
+    vertical-align: middle;
+    line-height: 0px;
+}
+span.flag_label{
+    margin-left:10px;
+    line-height: 0px;
 }
