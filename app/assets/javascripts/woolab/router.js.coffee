@@ -1,17 +1,24 @@
 angular.module('WooLab').config([ '$stateProvider', '$urlRouterProvider', '$locationProvider', 'AuthProvider'
     ($stateProvider, $urlRouterProvider, $locationProvider, AuthProvider) ->
-        $stateProvider.state('main', {
+        $stateProvider.state('base', 
             url: "/"
-            template: ''
-        })
-        $stateProvider.state('dashboard', {
+            templateUrl: 'base.html'
+            controller: 'BaseCtrl' 
+        )
+        .state('dashboard', 
             url: "/dashboard"
             templateUrl: 'dashboard.html'
             controller: 'DashboardCtrl'
             resolve:
-                auth: (Auth)->
-                    Auth.currentUser()
-        })
+                currentUser: ['Auth'
+                    (Auth) ->
+                        Auth.currentUser()
+                ]
+        )
+        
         $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode(true);
+
 ])
+
+

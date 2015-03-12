@@ -8,7 +8,7 @@ angular.module('AuthModule').controller("PasswordChangeCtrl", [
 
         if $stateParams.reset_password_token == ""
             customToast("error", 'auth.toast_messages.no_token_in_url')
-            $state.go('passwordRecovery')
+            $state.go('base.passwordRecovery')
 
         $scope.passwordChange = () ->
             if $scope.user.password != undefined and $scope.user.passwordConfirmation != undefined
@@ -23,10 +23,10 @@ angular.module('AuthModule').controller("PasswordChangeCtrl", [
 
         $rootScope.$on('devise:reset-password-failure', (event, response)->
             customToast("error", 'auth.toast_messages.password_change_error')
-            $state.go('login')
+            $state.go('base.login')
         )
         $rootScope.$on('devise:reset-password-success', (event, response)->
             customToast("success", 'auth.toast_messages.password_change_success')
-            $state.go('dashboard')
+            $state.go('base.dashboard')
         )
 ])

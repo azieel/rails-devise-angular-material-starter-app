@@ -48,7 +48,6 @@
     }
 
     var dropdownRealHeight = activates.height();
-    console.log(dropdownRealHeight);
 
     /*
       Helper function to position and resize dropdown.

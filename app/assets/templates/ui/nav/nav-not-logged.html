@@ -4,14 +4,26 @@
     <!-- fill up the space between left and right area -->
     <span flex></span>
     
-    <md-select ng-model="language">
-      <md-select-label translate><i class="md md-language"></i></md-select-label>
-      <md-option value="fr-FR" ng-click="changeLanguage('fr-FR')" translate>{{ 'ui.languages.french' }}</md-option>
-      <md-option value="en-US" ng-click="changeLanguage('en-US')" translate>{{ 'ui.languages.english' }}</md-option>
-    </md-select>
+    <dropdown-button data-activates="language_dropdown">
+      <i class="md md-language nav-icon"></i>
+    </dropdown-button>
+    <ul id="language_dropdown" class="dropdown-content">
+      <li>
+        <a value="fr-FR" ng-click="changeLanguage('fr-FR')" >
+          <img class="flag_img" ng-src="assets/fr-FR.svg" />
+          <span class="flag_label" translate>{{ 'ui.languages.french' }}</span>
+        </a>
+      </li>
+      <li>
+        <a value="en-US" ng-click="changeLanguage('en-US')" >
+          <img class="flag_img" ng-src="assets/en-US.svg" />
+          <span class="flag_label" translate>{{ 'ui.languages.english' }}</span>
+        </a>
+      </li>
+    </ul>
 
     <md-button>
-      <a href="/login" translate>{{ 'auth.login_link' }}</a>
+      <a ui-sref="base.login" translate>{{ 'auth.login_link' }}</a>
     </md-button>
 
   </div>

@@ -12,7 +12,7 @@ angular.module('AuthModule').controller("PasswordCtrl", [
         )
         $rootScope.$on('devise:new-password-token', (event, response)->
             customToast("success", 'auth.toast_messages.password_instructions_send')
-            $state.go('login')
+            $state.go('base.login')
         )
 
 ])
