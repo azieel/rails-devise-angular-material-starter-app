@@ -7,7 +7,7 @@
     <dropdown-button data-activates="language_dropdown">
       <i class="md md-language nav-icon"></i>
     </dropdown-button>
-    <ul id="language_dropdown" class="dropdown-content">
+    <ul id="language_dropdown" class="dropdown-content md-whiteframe-z2">
       <li>
         <a value="fr-FR" ng-click="changeLanguage('fr-FR')" >
           <img class="flag_img" ng-src="assets/fr-FR.svg" />
@@ -25,7 +25,7 @@
     <dropdown-button data-activates="account_dropdown">
       <i class="md md-account-circle nav-icon"></i>
     </dropdown-button>
-    <ul id="account_dropdown" class="dropdown-content">
+    <ul id="account_dropdown" class="dropdown-content md-whiteframe-z2">
       <li><a ng-click="logout()" translate>{{ 'auth.logout_link' }}</a></li>
     </ul>
   </div>
