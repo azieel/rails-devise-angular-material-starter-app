@@ -13,10 +13,8 @@ angular.module('WooLab').controller("DashboardCtrl", [
             {what: 'Brunch this weekend?',who: 'Min Li Chan',when: '3:08PM',notes: " I'll be in your neighborhood doing errands"}
         ]
 
-        CurrentRole = currentUser.role_type
-        $scope.navTemplate = 'ui/nav/nav-admin.html' if CurrentRole == 'Admin'
-        $scope.navTemplate = 'ui/nav/nav-admin.html' if CurrentRole == 'Customer'
-
-
-
+        currentRole = currentUser.role_type
+        $scope.navTemplate = 'ui/nav/nav-admin.html' if currentRole == 'Admin'
+        $scope.navTemplate = 'ui/nav/nav-admin.html' if currentRole == 'Customer'
+        $scope.currentRole = currentRole
 ])

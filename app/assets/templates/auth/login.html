@@ -1,8 +1,8 @@
-<div id="bg-app" layout="column" layout-align="center center" layout-fill>
-    <md-card>
-        <md-toolbar class="padded">
-            <h5 translate>{{ 'auth.login_title' }}</h5>
-        </md-toolbar>
+<md-whiteframe class="md-whiteframe-z1 auth-box" layout="column" flex="33">
+    <md-toolbar>
+        <h3 translate>{{ 'auth.login_title' }}</h3>
+    </md-toolbar>
+    <md-content>
         <form name="userForm" class="padded" ng-submit="authenticate_user()">
             <md-input-container>
                 <label translate>{{ 'auth.form.label.email' }}</label>
@@ -31,7 +31,9 @@
             <md-button type="submit" class="md-primary">
                 <span translate>{{ 'auth.form.login_submit' }}</span>
             </md-button>
-            <a ui-sref="base.passwordRecovery" translate>{{ 'auth.forgotten_password_link' }}</a>
+            <div>
+                <a ui-sref="base.passwordRecovery" translate>{{ 'auth.forgotten_password_link' }}</a>
+            </div>
         </form>
-    </md-card>
-</div>
+    </md-content>
+</md-whiteframe>

@@ -1,63 +1,47 @@
 <div ng-include="navTemplate" class="md-whiteframe-z2"></div>
-<ui-view ></ui-view>
+<div ui-view layout="column" layout-align="space-between start" full-height>
     <md-toolbar class="md-tall md-hue-2" >
       <span flex></span>
       <h2 class="md-toolbar-tools">
         <span class="md-flex">
-            <strong>Lorem ipsum.</strong></br>
-            <span>Voyez ce jeu exquis wallon, de graphie en kit mais bref.</span>
+            <strong>Welcome</strong></br>
+            <span>Connecté en tant que {{ currentRole }}</span>
         </span>
       </h2>
     </md-toolbar>
-<div layout-wrap layout="row" layout-padding>
-
-    <div flex="66">
-        <md-whiteframe class="md-whiteframe-z1" layout="column" >
-        <md-toolbar class="md-hue-3">Bijour</md-toolbar>
-            <md-content class="md-padding" style="width:100%;">
-                <form name="projectForm">
-                    <md-input-container>
-                        <label>Description</label>
-                        <input md-maxlength="30" required name="description" ng-model="project.description">
-                        <div ng-messages="projectForm.description.$error">
-                        <div ng-message="required">This is required.</div>
-                        <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
-                        </div>
-                    </md-input-container>
-                    <md-input-container>
-                        <label>Client Name</label>
-                        <input required name="clientName" ng-model="project.clientName">
-                        <div ng-messages="projectForm.clientName.$error">
-                        <div ng-message="required">This is required.</div>
-                        </div>
-                    </md-input-container>
+    <div layout="row" style="width:100%" layout-padding>
+        <div flex="66">
+            <md-whiteframe class="md-whiteframe-z1" layout="column" >
+                <md-toolbar class="md-hue-3">Bijour</md-toolbar>
+                <md-content class="md-padding" style="width:100%;">
+                    <form name="projectForm">
                         <md-input-container>
-                        <label>Hourly Rate (USD)</label>
-                        <input required type="number" step="any" name="rate" ng-model="project.rate" min="800" max="4999">
-                        <div ng-messages="projectForm.rate.$error">
-                            <div ng-message="required">You've got to charge something! You can't just <b>give away</b> a Missile Defense System.</div>
-                            <div ng-message="min">You should charge at least $800 an hour. This job is a big deal... if you mess up, everyone dies!</div>
-                            <div ng-message="max">$5,000 an hour? That's a little ridiculous. I doubt event Bill Clinton could afford that.</div>
-                        </div>
-                    </md-input-container>
-                </form>
-            </md-content>
-        </md-whiteframe>
-    </div>
-    <div flex="33" layout-fill>
-        <md-whiteframe class="md-whiteframe-z1" layout>
-            <md-list>
-                <md-item ng-repeat="item in todos">
-                    <md-item-content>
-                        <div class="md-tile-content">
-                            <h3>{{item.what}}</h3>
-                            <h4>{{item.who}}</h4>
-                            <p>{{item.notes}}</p>
-                        </div>
-                    </md-item-content>
-                </md-item>
-            </md-list>
-        </md-whiteframe>
-    </div>
+                            <label>Description</label>
+                            <input md-maxlength="30" required name="description" ng-model="project.description">
+                            <div ng-messages="projectForm.description.$error">
+                                <div ng-message="required">This is required.</div>
+                                <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+                            </div>
+                        </md-input-container>
+                    </form>
+                </md-content>
+            </md-whiteframe>
+        </div>
+        <div flex="33" >
+            <md-whiteframe class="md-whiteframe-z1" layout>
+                <md-list>
+                    <md-item ng-repeat="item in todos">
+                        <md-item-content>
+                            <div class="md-tile-content">
+                                <h3>{{item.what}}</h3>
+                                <h4>{{item.who}}</h4>
+                                <p>{{item.notes}}</p>
+                            </div>
+                        </md-item-content>
+                    </md-item>
+                </md-list>
+            </md-whiteframe>
+        </div>
 
+    </div>
 </div>
