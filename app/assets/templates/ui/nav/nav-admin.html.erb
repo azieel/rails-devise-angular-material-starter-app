@@ -1,4 +1,4 @@
-<md-toolbar id="app-navigation" ng-controller="NavCtrl" class="md-whiteframe-z2">
+<md-toolbar id="app-navigation" ng-controller="NavCtrl" class="md-whiteframe-z2  md-hue-1">
   <div class="md-toolbar-tools">
     <span>WooLab</span>
     <!-- fill up the space between left and right area -->
@@ -10,13 +10,13 @@
     <ul id="language_dropdown" class="dropdown-content md-whiteframe-z2">
       <li>
         <a value="fr-FR" ng-click="changeLanguage('fr-FR')" >
-          <img class="flag_img" ng-src="assets/fr-FR.svg" />
+          <img class="flag_img" ng-src="<%= asset_path 'fr-FR.svg' %>" />
           <span class="flag_label" translate>{{ 'ui.languages.french' }}</span>
         </a>
       </li>
       <li>
         <a value="en-US" ng-click="changeLanguage('en-US')" >
-          <img class="flag_img" ng-src="assets/en-US.svg" />
+          <img class="flag_img" ng-src="<%= asset_path 'en-US.svg' %>" />
           <span class="flag_label" translate>{{ 'ui.languages.english' }}</span>
         </a>
       </li>
