@@ -22,17 +22,20 @@ md-content{
 //  Toasts colors
 //=================================================================
 md-toast{
+    &.md-top{
+        top:52px;
+    }
     &.toast_success{
-        background-color:green;
+        background-color:#4CAF50;
     }
     &.toast_notice{
-        background-color:blue;
+        background-color:#03A9F4;
     }
     &.toast_warning{
-        background-color:orange;
+        background-color:#FFA726;
     }
     &.toast_error{
-        background-color:red;
+        background-color:#E65100;
     }
 }
 //=================================================================
