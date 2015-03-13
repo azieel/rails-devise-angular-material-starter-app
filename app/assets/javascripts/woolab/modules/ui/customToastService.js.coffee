@@ -1,6 +1,6 @@
 #extend $mdToast service for enable custom presets for toasts with translated content
 angular.module('UiModule').factory 'customToast', ['$rootScope', '$mdToast', '$translate', ($rootScope, $mdToast, $translate)->
-    this.show = (preset, translation_id, to_translate = true, hideDelay = 4000)->
+    this.show = (preset, translation_id, to_translate = true, hideDelay = 40000)->
         if to_translate
             $translate(translation_id).then( (translation) ->
                 content = translation

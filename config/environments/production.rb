@@ -75,4 +75,17 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.default_url_options = { host: ENV['APP_HOST']}
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.perform_deliveries = true
+  ActionMailer::Base.raise_delivery_errors = true
+  ActionMailer::Base.smtp_settings = {
+    :address            => 'SSL0.OVH.NET',
+    :port               => 587,
+    :domain             => 'azieelweb.com', #you can also use google.com
+    :authentication     => :plain,
+    :user_name          => ENV['MAIL_PROVIDER_USERNAME'],
+    :password           => ENV['MAIL_PROVIDER_PASSWORD']
+  }
 end

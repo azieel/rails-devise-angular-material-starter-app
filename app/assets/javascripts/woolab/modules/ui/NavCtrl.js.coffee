@@ -4,7 +4,7 @@ angular.module('BaseModule').controller("NavCtrl", [
         console.log "NavCtrl"   
 
         $scope.$on('devise:logout', (event, oldCurrentUser) ->
-            customToast("error", "auth.toast_messages.logout_success")
+            customToast("notice", "auth.toast_messages.logout_success")
         )
 
         $scope.logout = -> Auth.logout().then(
