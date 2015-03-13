@@ -19,25 +19,25 @@ i[class*=" md-"] {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.md {
+i.md {
   line-height: inherit;
   vertical-align: bottom;
 }
-.md-lg {
+i.md-lg {
   font-size: 1.5em;
   line-height: .5em;
   vertical-align: -35%;
 }
-.md-2x {
+i.md-2x {
   font-size: 2em;
 }
-.md-3x {
+i.md-3x {
   font-size: 3em;
 }
-.md-4x {
+i.md-4x {
   font-size: 4em;
 }
-.md-5x {
+i.md-5x {
   font-size: 5em;
 }
 .md-border {
