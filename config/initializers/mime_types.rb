@@ -4,4 +4,4 @@
 # Mime::Type.register "text/richtext", :rtf
 Rack::Mime::MIME_TYPES['.woff'] = 'application/x-font-woff'
 Rack::Mime::MIME_TYPES['.otf'] = 'application/x-font-opentype'
-Mime::Type.register "image/svg+xml", :svg
+Rack::Mime::MIME_TYPES['.svg'] = "image/svg+xml"
