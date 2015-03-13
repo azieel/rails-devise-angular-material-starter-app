@@ -5,6 +5,7 @@ angular.module('BaseModule', [
     'templates'
     'ngMessages'
     'ngMaterial'
+    'restangular'
 ])
 .config ["$mdThemingProvider"
     ($mdThemingProvider) ->

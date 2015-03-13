@@ -17,6 +17,8 @@
 //= require angular-translate
 //= require angular-translate-loader-partial
 //= require_self
+//= require lodash
+//= require restangular
 
 
 // Require app main files
