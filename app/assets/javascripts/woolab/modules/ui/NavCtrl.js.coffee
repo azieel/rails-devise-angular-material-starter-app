@@ -1,6 +1,6 @@
 angular.module('BaseModule').controller("NavCtrl", [
-    '$scope', 'Auth', "$state", "customToast", "$translate", "$timeout"
-    ($scope, Auth, $state, customToast, $translate, $timeout)->
+    'uiDashboardService', '$scope', 'Auth', "$state", "customToast", "$translate"
+    (uiDashboardService, $scope, Auth, $state, customToast, $translate)->
         console.log "NavCtrl"   
 
         $scope.$on('devise:logout', (event, oldCurrentUser) ->
@@ -15,5 +15,8 @@ angular.module('BaseModule').controller("NavCtrl", [
         $scope.changeLanguage = (languageKey)->
             $translate.use(languageKey)
             $scope.languageKey = languageKey
+
+        $scope.openProfilePanel = ()->
+            uiDashboardService.OpenProfilePanel()
         
 ])

@@ -27,6 +27,9 @@
     </dropdown-button>
     <ul id="account_dropdown" class="dropdown-content md-whiteframe-z2">
       <li><a ng-click="logout()" translate>{{ 'auth.logout_link' }}</a></li>
+      <li><a ng-click="openProfilePanel()" translate>{{ 'auth.edit_profile_link' }}</a></li>
     </ul>
   </div>
 </md-toolbar>
+
+<div ng-include="'edit_profile.html'" ng-controller="EditProfileCtrl"></div>

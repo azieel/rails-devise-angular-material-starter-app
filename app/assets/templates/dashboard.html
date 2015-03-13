@@ -4,7 +4,7 @@
       <span flex></span>
       <h2 class="md-toolbar-tools">
         <span class="md-flex">
-            <strong>Welcome</strong></br>
+            <strong translate="dashboard.welcome" translate-value-username="{{userProfile.username}}" ></strong></br>
             <span>Connecté en tant que {{ currentRole }}</span>
         </span>
       </h2>
@@ -12,36 +12,18 @@
     <div layout="row" style="width:100%" layout-padding>
         <div flex="66">
             <md-whiteframe class="md-whiteframe-z1" layout="column" >
-                <md-toolbar class="md-hue-3">Bijour</md-toolbar>
+                <md-toolbar class="md-hue-3">Toolbar title</md-toolbar>
                 <md-content class="md-padding" style="width:100%;">
-                    <form name="projectForm">
-                        <md-input-container>
-                            <label>Description</label>
-                            <input md-maxlength="30" required name="description" ng-model="project.description">
-                            <div ng-messages="projectForm.description.$error">
-                                <div ng-message="required">This is required.</div>
-                                <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
-                            </div>
-                        </md-input-container>
-                    </form>
+                    
                 </md-content>
             </md-whiteframe>
         </div>
         <div flex="33" >
             <md-whiteframe class="md-whiteframe-z1" layout>
-                <md-list>
-                    <md-item ng-repeat="item in todos">
-                        <md-item-content>
-                            <div class="md-tile-content">
-                                <h3>{{item.what}}</h3>
-                                <h4>{{item.who}}</h4>
-                                <p>{{item.notes}}</p>
-                            </div>
-                        </md-item-content>
-                    </md-item>
-                </md-list>
+                Activity feed
             </md-whiteframe>
         </div>
 
     </div>
 </div>
+

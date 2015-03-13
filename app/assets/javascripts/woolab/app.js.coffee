@@ -4,6 +4,7 @@ angular.module('WooLab',[
     'AuthModule'
     'TranslateModule'
     'UiModule'
+    'DashboardModule'
     ])
 .run ["$rootScope", "$state", "Auth", "customToast", "$translate"
     ($rootScope, $state, Auth, customToast, $translate) ->

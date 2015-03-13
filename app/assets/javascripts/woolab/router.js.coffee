@@ -15,6 +15,11 @@ angular.module('WooLab').config([ '$stateProvider', '$urlRouterProvider', '$loca
                         Auth.currentUser()
                 ]
         )
+        .state('dashboard.editProfile', 
+            url: "/edit_profile"
+            templateUrl: 'edit_profile.html'
+            controller: 'EditProfileCtrl'
+        )
         
         $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode(true);

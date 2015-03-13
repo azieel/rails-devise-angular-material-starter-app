@@ -3,4 +3,8 @@ class Admin < ActiveRecord::Base
 
     accepts_nested_attributes_for :user
 
+    def username
+        "#{self.first_name} #{self.last_name}"
+    end
+
 end

@@ -1,0 +1,54 @@
+<md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right" >
+      <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools" translate>{{ 'auth.edit_profile_title' }}</h1>
+      </md-toolbar>
+      <md-content class="md-padding" >
+        <form name="userForm" ng-submit="edit_profile()">
+          <md-button type="submit" class="md-primary ">
+            <span translate>{{ 'auth.form.edit_profile_submit' }}</span>
+          </md-button>
+          <md-input-container>
+            <label translate>{{ 'auth.form.label.first_name' }}</label>
+            <input type="first_name" name="first_name" ng-model="profile.first_name" required >
+            <div ng-messages="userForm.email.$error" ng-show="userForm.first_name.$invalid">
+                <div ng-message="required"><span translate>{{ 'auth.form.error.required_field' }}</span></div>
+            </div>
+          </md-input-container>
+          <md-input-container>
+            <label translate>{{ 'auth.form.label.last_name' }}</label>
+            <input type="last_name" name="last_name" ng-model="profile.last_name" required >
+            <div ng-messages="userForm.email.$error" ng-show="userForm.last_name.$invalid">
+                <div ng-message="required"><span translate>{{ 'auth.form.error.required_field' }}</span></div>
+            </div>
+          </md-input-container>
+          <md-input-container>
+            <label translate>{{ 'auth.form.label.address' }}</label>
+            <input type="address" name="address" ng-model="profile.address" required >
+            <div ng-messages="userForm.email.$error" ng-show="userForm.address.$invalid">
+                <div ng-message="required"><span translate>{{ 'auth.form.error.required_field' }}</span></div>
+            </div>
+          </md-input-container>
+          <md-input-container>
+            <label translate>{{ 'auth.form.label.zip_code' }}</label>
+            <input type="zip_code" name="zip_code" ng-model="profile.zip_code" required >
+            <div ng-messages="userForm.email.$error" ng-show="userForm.zip_code.$invalid">
+                <div ng-message="required"><span translate>{{ 'auth.form.error.required_field' }}</span></div>
+            </div>
+          </md-input-container>
+          <md-input-container>
+            <label translate>{{ 'auth.form.label.city' }}</label>
+            <input type="city" name="city" ng-model="profile.city" required >
+            <div ng-messages="userForm.email.$error" ng-show="userForm.city.$invalid">
+                <div ng-message="required"><span translate>{{ 'auth.form.error.required_field' }}</span></div>
+            </div>
+          </md-input-container>
+          <md-input-container>
+            <label translate>{{ 'auth.form.label.tel' }}</label>
+            <input type="tel" name="tel" ng-model="profile.tel" required >
+            <div ng-messages="userForm.email.$error" ng-show="userForm.tel.$invalid">
+                <div ng-message="required"><span translate>{{ 'auth.form.error.required_field' }}</span></div>
+            </div>
+          </md-input-container>
+        </form>
+    </md-content>
+</md-sidenav>
