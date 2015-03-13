@@ -82,9 +82,9 @@ Rails.application.configure do
   ActionMailer::Base.perform_deliveries = true
   ActionMailer::Base.raise_delivery_errors = true
   ActionMailer::Base.smtp_settings = {
-    :address            => 'SSL0.OVH.NET',
-    :port               => 587,
-    :domain             => 'azieelweb.com', #you can also use google.com
+    :address            => ENV['MAIL_PROVIDER_ADDRESS'],
+    :port               => ENV['MAIL_PROVIDER_PORT'],
+    :domain             => ENV['MAIL_PROVIDER_DOMAIN'], #you can also use google.com
     :authentication     => :plain,
     :user_name          => ENV['MAIL_PROVIDER_USERNAME'],
     :password           => ENV['MAIL_PROVIDER_PASSWORD']
