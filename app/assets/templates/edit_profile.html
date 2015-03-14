@@ -22,6 +22,13 @@
             </div>
           </md-input-container>
           <md-input-container>
+            <label translate>{{ 'auth.form.label.email' }}</label>
+            <input type="email" name="email" ng-model="profile.email" required >
+            <div ng-messages="userForm.email.$error" ng-show="userForm.email.$invalid">
+                <div ng-message="required"><span translate>{{ 'auth.form.error.required_field' }}</span></div>
+            </div>
+          </md-input-container>
+          <md-input-container>
             <label translate>{{ 'auth.form.label.address' }}</label>
             <input type="text" name="address" ng-model="profile.address" required >
             <div ng-messages="userForm.address.$error" ng-show="userForm.address.$invalid">
@@ -50,6 +57,34 @@
                 <div ng-message="number"><span translate>{{ 'auth.form.error.number_field' }}</span></div>
                 <div ng-message="required"><span translate>{{ 'auth.form.error.required_field' }}</span></div>
             </div>
+          </md-input-container>
+          <p translate>{{ 'auth.edit_password_notice' }}</p>
+          <md-input-container>
+              <label translate>{{ 'auth.form.label.new_password' }}</label>
+              <input type="password" name="password" ng-model="profile.password" required minlength="8" value="">
+                  <div ng-messages="userForm.password.$error" ng-show="userForm.password.$invalid">
+                      <div ng-message="required">
+                          <span translate>{{ 'auth.form.error.required_field' }}</span>
+                          </div>
+                      <div ng-message="minlength">
+                          <span translate>{{ 'auth.form.error.too_short' }}</span>
+                      </div>
+                  </div>
+          </md-input-container>
+          <md-input-container>
+              <label translate>{{ 'auth.form.label.password_confirmation' }}</label>
+              <input type="password" name="password_confirmation" ng-model="profile.passwordConfirmation" required minlength="8" field-compare-to="userForm.password">
+                  <div ng-messages="userForm.password_confirmation.$error" ng-show="userForm.password_confirmation.$invalid">
+                      <div ng-message="required">
+                          <span translate>{{ 'auth.form.error.required_field' }}</span>
+                      </div>
+                      <div ng-message="minlength">
+                          <span translate>{{ 'auth.form.error.too_short' }}</span>
+                      </div>
+                      <div ng-message="fieldCompareTo">
+                      <span translate>{{ 'auth.form.error.no_match' }}</span>
+                      </div>
+                  </div>
           </md-input-container>
         </form>
     </md-content>

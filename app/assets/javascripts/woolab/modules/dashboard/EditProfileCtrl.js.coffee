@@ -18,7 +18,10 @@ angular.module('DashboardModule').controller("EditProfileCtrl", [
                     $scope.profile.zip_code = profile.zip_code
                     $scope.profile.city = profile.city
                     $scope.profile.tel = profile.tel
-                    $scope.originalProfile = $scope.profile
+                    $scope.profile.email = profile.user.email
+                    $scope.profile.role_type = profile.user.role_type
+                    $scope.profile.password = ""
+                    $scope.profile.password_confirmation = ""
             )
         )
 ])
