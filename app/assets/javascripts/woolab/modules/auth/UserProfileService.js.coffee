@@ -5,5 +5,10 @@ angular.module('AuthModule').factory 'UserProfileService', ['$rootScope', 'Auth'
         currentUser = extend._currentUser
         profileRoute = currentUser.role_type.toLowerCase() + 's'
         Restangular.one(profileRoute, currentUser.role_id).get()
+
+    extend.update_user_profile = (profile) ->
+        currentUser = extend._currentUser
+        profileRoute = currentUser.role_type.toLowerCase() + 's'
+        Restangular.one(profileRoute, currentUser.role_id).put(profile)
     extend
 ]
