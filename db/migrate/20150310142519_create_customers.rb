@@ -8,7 +8,7 @@ class CreateCustomers < ActiveRecord::Migration
         t.integer :zip_code
         t.string :city
         t.string :country
-        t.integer :tel
+        t.string :tel
 
         t.belongs_to :compagny, index:true        
 
