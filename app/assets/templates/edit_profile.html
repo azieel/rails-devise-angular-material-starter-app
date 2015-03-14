@@ -1,5 +1,5 @@
-<md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right" >
-      <md-toolbar class="md-theme-indigo">
+<md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="editProfilePanel" >
+      <md-toolbar>
         <h1 class="md-toolbar-tools" translate>{{ 'auth.edit_profile_title' }}</h1>
       </md-toolbar>
       <md-content class="md-padding" >
@@ -9,43 +9,45 @@
           </md-button>
           <md-input-container>
             <label translate>{{ 'auth.form.label.first_name' }}</label>
-            <input type="first_name" name="first_name" ng-model="profile.first_name" required >
-            <div ng-messages="userForm.email.$error" ng-show="userForm.first_name.$invalid">
+            <input type="text" name="first_name" ng-model="profile.first_name" required >
+            <div ng-messages="userForm.first_name.$error" ng-show="userForm.first_name.$invalid">
                 <div ng-message="required"><span translate>{{ 'auth.form.error.required_field' }}</span></div>
             </div>
           </md-input-container>
           <md-input-container>
             <label translate>{{ 'auth.form.label.last_name' }}</label>
-            <input type="last_name" name="last_name" ng-model="profile.last_name" required >
-            <div ng-messages="userForm.email.$error" ng-show="userForm.last_name.$invalid">
+            <input type="text" name="last_name" ng-model="profile.last_name" required >
+            <div ng-messages="userForm.last_name.$error" ng-show="userForm.last_name.$invalid">
                 <div ng-message="required"><span translate>{{ 'auth.form.error.required_field' }}</span></div>
             </div>
           </md-input-container>
           <md-input-container>
             <label translate>{{ 'auth.form.label.address' }}</label>
-            <input type="address" name="address" ng-model="profile.address" required >
-            <div ng-messages="userForm.email.$error" ng-show="userForm.address.$invalid">
+            <input type="text" name="address" ng-model="profile.address" required >
+            <div ng-messages="userForm.address.$error" ng-show="userForm.address.$invalid">
                 <div ng-message="required"><span translate>{{ 'auth.form.error.required_field' }}</span></div>
             </div>
           </md-input-container>
           <md-input-container>
             <label translate>{{ 'auth.form.label.zip_code' }}</label>
-            <input type="zip_code" name="zip_code" ng-model="profile.zip_code" required >
-            <div ng-messages="userForm.email.$error" ng-show="userForm.zip_code.$invalid">
+            <input type="number" name="zip_code" ng-model="profile.zip_code" required >
+            <div ng-messages="userForm.zip_code.$error" ng-show="userForm.zip_code.$invalid">
                 <div ng-message="required"><span translate>{{ 'auth.form.error.required_field' }}</span></div>
+                <div ng-message="number"><span translate>{{ 'auth.form.error.number_field' }}</span></div>
             </div>
           </md-input-container>
           <md-input-container>
             <label translate>{{ 'auth.form.label.city' }}</label>
             <input type="city" name="city" ng-model="profile.city" required >
-            <div ng-messages="userForm.email.$error" ng-show="userForm.city.$invalid">
+            <div ng-messages="userForm.city.$error" ng-show="userForm.city.$invalid">
                 <div ng-message="required"><span translate>{{ 'auth.form.error.required_field' }}</span></div>
             </div>
           </md-input-container>
           <md-input-container>
             <label translate>{{ 'auth.form.label.tel' }}</label>
             <input type="tel" name="tel" ng-model="profile.tel" required >
-            <div ng-messages="userForm.email.$error" ng-show="userForm.tel.$invalid">
+            <div ng-messages="userForm.tel.$error" ng-show="userForm.tel.$invalid">
+                <div ng-message="number"><span translate>{{ 'auth.form.error.number_field' }}</span></div>
                 <div ng-message="required"><span translate>{{ 'auth.form.error.required_field' }}</span></div>
             </div>
           </md-input-container>

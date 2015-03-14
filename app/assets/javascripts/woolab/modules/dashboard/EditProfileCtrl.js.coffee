@@ -1,6 +1,6 @@
 angular.module('DashboardModule').controller("EditProfileCtrl", [
-    '$scope', '$state', '$mdSidenav', 'Auth', 'UserProfileService'
-    ($scope, $state, $mdSidenav, Auth, UserProfileService)->
+    '$scope', '$state', '$mdSidenav', 'Auth', 'UserProfileService', "$mdComponentRegistry"
+    ($scope, $state, $mdSidenav, Auth, UserProfileService, $mdComponentRegistry)->
         console.log "EditProfileCtrl"
         
         Auth.get_user_profile().then(
@@ -15,14 +15,17 @@ angular.module('DashboardModule').controller("EditProfileCtrl", [
         )
 
         $scope.edit_profile = () ->
-            console.log $scope.profile
-            profile = $scope.profile
+            profile =  $scope.profile
             Auth.update_user_profile(profile)
 
-        $scope.$on('openProfilePanel', (event, args) ->
-            $mdSidenav('right').toggle()
+
+        $scope.$on('sidenav:editProfilePanel:closed', (event, args) ->
+            console.log 'sidebar fermée'
         )
 
-
+        $scope.$on('openProfilePanel', (event, args) ->
+            $mdSidenav('editProfilePanel').open()
+            $scope.panelIsOpen = $mdSidenav('editProfilePanel').isOpen()
+        )
 
 ])

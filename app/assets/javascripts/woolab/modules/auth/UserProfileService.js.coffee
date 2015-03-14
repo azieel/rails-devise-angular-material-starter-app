@@ -9,6 +9,11 @@ angular.module('AuthModule').factory 'UserProfileService', ['$rootScope', 'Auth'
     extend.update_user_profile = (profile) ->
         currentUser = extend._currentUser
         profileRoute = currentUser.role_type.toLowerCase() + 's'
-        Restangular.one(profileRoute, currentUser.role_id).put(profile)
+        Restangular.one(profileRoute, currentUser.role_id).put(profile).then(
+            (new_profile) ->
+                console.log new_profile
+            (error) ->
+                console.log error
+        )
     extend
 ]

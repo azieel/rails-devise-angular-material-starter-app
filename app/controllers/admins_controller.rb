@@ -12,9 +12,12 @@ class AdminsController < ApplicationController
 
     def update
         @admin = Admin.find(params[:id])
-        @admin.update_attributes(admin_params)
+        if @admin.update_attributes(admin_params)
+            render json: @admin
+        else 
+            render json: {error: "Profile update error or no change detected"}
+        end
 
-        render json: @admin
     end
 
     def default_serializer_options
