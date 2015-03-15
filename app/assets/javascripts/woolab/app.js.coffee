@@ -13,15 +13,13 @@ angular.module('WooLab',[
         Auth.currentUser()
 
         #Initialize 401 Interceptor on devise:unauthorized event
-        $rootScope.$on('devise:unauthorized', (event, reponse, deferred)->
-            errorMessage = reponse.data.error
-            customToast("error", errorMessage, false)
+        $rootScope.$on 'devise:unauthorized', (event, reponse, deferred)->
+            customToast("error", 'auth.toast_messages.unauthorized')
             $state.go('base.login')
-        )
-        
+             
         #Refresh translate service on structure change
-        $rootScope.$on('$translatePartialLoaderStructureChanged', ->
+        $rootScope.$on '$translatePartialLoaderStructureChanged', ->
             $translate.refresh()
-        )
+        
 
 ]

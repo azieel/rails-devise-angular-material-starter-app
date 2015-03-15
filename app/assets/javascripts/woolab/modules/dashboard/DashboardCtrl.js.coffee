@@ -8,5 +8,4 @@ angular.module('DashboardModule').controller("DashboardCtrl", [
         $scope.currentRole = currentUser.role_type
         ressourceRoute = currentUser.role_type.toLowerCase() + 's'
 
-
 ])

@@ -2,12 +2,8 @@ angular.module('DashboardModule').controller("EditProfileCtrl", [
     '$scope', '$state', '$mdSidenav', 'Auth', 'UserProfileService', "customToast"
     ($scope, $state, $mdSidenav, Auth, UserProfileService, customToast)->
         console.log "EditProfileCtrl"
-        
-        $scope.edit_profile = () ->
-            profile =  $scope.profile
-            Auth.update_user_profile(profile)
 
-        $scope.$on('openProfilePanel', (event, args) ->
+        $scope.$on 'openProfilePanel', (event, args) ->
             $mdSidenav('editProfilePanel').open()
             Auth.get_user_profile().then(
                 (profile) ->
@@ -23,5 +19,8 @@ angular.module('DashboardModule').controller("EditProfileCtrl", [
                     $scope.profile.user_attributes.password = ""
                     $scope.profile.user_attributes.password_confirmation = ""
             )
-        )
+        
+        $scope.edit_profile = () ->
+            profile =  $scope.profile
+            Auth.update_user_profile(profile)
 ])

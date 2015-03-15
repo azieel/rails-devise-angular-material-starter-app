@@ -1,6 +1,7 @@
 #extend Devise-angular service to add profile user by role to Auth service
 angular.module('AuthModule').factory 'UserProfileService', ['$rootScope', 'Auth', 'Restangular', "customToast", ($rootScope, Auth, Restangular, customToast)->
     extend = angular.extend (Auth)
+
     extend.get_user_profile = ()->
         currentUser = extend._currentUser
         profileRoute = currentUser.role_type.toLowerCase() + 's'
@@ -8,19 +9,23 @@ angular.module('AuthModule').factory 'UserProfileService', ['$rootScope', 'Auth'
 
     extend.update_user_profile = (profile) ->
         
+        #retrieve user role, and set route for update
         profileRoute = profile.user_attributes.role_type.toLowerCase() + 's'
         password = profile.user_attributes.password
         password_confirmation = profile.user_attributes.password_confirmation
         passwordIsChanged = false
 
+        #If password change, prepare login credentials for reconnect user after update
         if password != "" and password_confirmation != ""
             passwordIsChanged = true
-            credentials = {
+            credentials = 
                 email: profile.user_attributes.email,
                 password: profile.user_attributes.password
-            }
-        
-        Restangular.one(profileRoute, profile.user_attributes.role_id).put(profile).then(
+            
+        #Restangular query for update profile (return promise)
+        Restangular.one(profileRoute, profile.user_attributes.role_id)
+        .put(profile)
+        .then(
             (new_profile) ->
                 if passwordIsChanged
                     Auth.login(credentials)
@@ -31,6 +36,5 @@ angular.module('AuthModule').factory 'UserProfileService', ['$rootScope', 'Auth'
                 else 
                     customToast("error", 'auth.toast_messages.edit_profile_failure')
         )
-
     extend
 ]
