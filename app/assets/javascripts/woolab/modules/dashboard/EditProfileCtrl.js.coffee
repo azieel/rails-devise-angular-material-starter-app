@@ -1,8 +1,8 @@
 angular.module('DashboardModule').controller("EditProfileCtrl", [
-    '$scope', '$state', '$mdSidenav', 'Auth', 'UserProfileService'
-    ($scope, $state, $mdSidenav, Auth, UserProfileService)->
+    '$scope', '$state', '$mdSidenav', 'Auth', 'UserProfileService', "customToast"
+    ($scope, $state, $mdSidenav, Auth, UserProfileService, customToast)->
         console.log "EditProfileCtrl"
-
+        
         $scope.edit_profile = () ->
             profile =  $scope.profile
             Auth.update_user_profile(profile)
@@ -18,10 +18,10 @@ angular.module('DashboardModule').controller("EditProfileCtrl", [
                     $scope.profile.zip_code = profile.zip_code
                     $scope.profile.city = profile.city
                     $scope.profile.tel = profile.tel
-                    $scope.profile.email = profile.user.email
-                    $scope.profile.role_type = profile.user.role_type
-                    $scope.profile.password = ""
-                    $scope.profile.password_confirmation = ""
+                    $scope.profile.user_attributes = {}
+                    $scope.profile.user_attributes = profile.user
+                    $scope.profile.user_attributes.password = ""
+                    $scope.profile.user_attributes.password_confirmation = ""
             )
         )
 ])
