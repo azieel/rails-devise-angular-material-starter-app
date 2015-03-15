@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20150310143012) do
     t.integer  "zip_code"
     t.string   "city"
     t.string   "country"
-    t.integer  "tel"
+    t.string   "tel"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20150310143012) do
     t.integer  "zip_code"
     t.string   "city"
     t.string   "country"
-    t.integer  "tel"
+    t.string   "tel"
     t.integer  "compagny_id"
     t.datetime "created_at"
     t.datetime "updated_at"

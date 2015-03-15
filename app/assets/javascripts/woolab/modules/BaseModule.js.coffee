@@ -7,8 +7,8 @@ angular.module('BaseModule', [
     'ngMaterial'
     'restangular'
 ])
-.config ["$mdThemingProvider"
-    ($mdThemingProvider) ->
+.config ["$mdThemingProvider", "RestangularProvider"
+    ($mdThemingProvider, RestangularProvider) ->
         $mdThemingProvider.theme('default')
         .primaryPalette('blue-grey',
             'default': '400'
@@ -17,4 +17,6 @@ angular.module('BaseModule', [
             'hue-3': '400'
         )
         .accentPalette('orange');
+
+        RestangularProvider.setBaseUrl('/api/v1')
 ]

@@ -1,4 +1,4 @@
-class AdminsController < ApplicationController
+class Api::V1::AdminsController < ApplicationController
     before_action :authenticate_user!
 
     respond_to :json
@@ -23,8 +23,6 @@ class AdminsController < ApplicationController
             render json: {error: "Error password change"}, status: :unprocessable_entity
         end
     end
-
-
 
     def default_serializer_options
       {root: false}
