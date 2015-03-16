@@ -23,10 +23,10 @@ angular.module('AuthModule').controller("PasswordChangeCtrl", [
 
         $rootScope.$on('devise:reset-password-failure', (event, response)->
             customToast("error", 'auth.toast_messages.password_change_error')
-            #$state.go('base.login')
+            $state.go('base.login')
         )
         $rootScope.$on('devise:reset-password-success', (event, response)->
             customToast("success", 'auth.toast_messages.password_change_success')
-            $state.go('base.dashboard')
+            $state.go('dashboard')
         )
 ])

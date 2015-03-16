@@ -9,7 +9,7 @@ angular.module('BaseModule').controller("NavCtrl", [
 
         $scope.logout = -> Auth.logout().then(
             (oldUser) ->
-                $state.go('base', reload:true)
+                $state.go('base.login', reload:true)
         )
 
         $scope.changeLanguage = (languageKey)->
