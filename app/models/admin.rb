@@ -3,6 +3,8 @@ class Admin < ActiveRecord::Base
 
     accepts_nested_attributes_for :user
 
+    validates :zip_code, numericality: true
+
     def username
         "#{self.first_name} #{self.last_name}"
     end

@@ -8,3 +8,10 @@ admin.save
 p "ADMIN USER CREATED ============================================================"
 p admin
 p "==============================================================================="
+customer = User.create!(email: 'customer@gmail.com', password: "52145214", password_confirmation: "52145214")
+customer_role = Customer.create!(first_name: "John", last_name: "Doe", address: "8 Avenue des clients", zip_code: "13010", city: "Marseille", country: "France", tel: "0652325685")
+customer.role = customer_role
+customer.save
+p "ADMIN USER CREATED ============================================================"
+p customer
+p "==============================================================================="

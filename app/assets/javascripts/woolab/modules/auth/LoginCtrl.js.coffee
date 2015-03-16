@@ -3,8 +3,6 @@ angular.module('AuthModule').controller("LoginCtrl", [
     ($scope, Auth, $state, $http, customToast, passwordRecoveryService, $translate, $translatePartialLoader, $filter)->
         console.log 'LoginCtrl'
 
-        console.log Auth
-
         $scope.user = {}
         if Auth.isAuthenticated()
             customToast("notice", 'auth.toast_messages.already_login')
