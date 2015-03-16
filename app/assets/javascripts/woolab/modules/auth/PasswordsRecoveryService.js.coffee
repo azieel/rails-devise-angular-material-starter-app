@@ -3,7 +3,7 @@ angular.module('AuthModule').factory 'passwordRecoveryService', ['$rootScope', '
     extend = angular.extend (Auth)
     extend.password_recover = (email)->
         email = email || {}
-        path = "api/v1/users/password.json"
+        path = "users/password.json"
         config = {
             method: "post"
             url: path
@@ -19,7 +19,7 @@ angular.module('AuthModule').factory 'passwordRecoveryService', ['$rootScope', '
                 error
         )
     extend.password_change = (data)->
-        path = "api/v1/users/password.json"
+        path = "users/password.json"
         config = {
             method: "patch"
             url: path

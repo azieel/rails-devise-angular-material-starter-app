@@ -9,3 +9,10 @@ angular.module('TranslateModule', ['pascalprecht.translate'])
         $translateProvider.preferredLanguage('fr-FR')
         $translatePartialLoaderProvider.addPart('notices')
 ]
+.run ["$rootScope", "$translate"
+    ($rootScope, $translate) ->
+                 
+        #Refresh translate service on structure change
+        $rootScope.$on '$translatePartialLoaderStructureChanged', ->
+            $translate.refresh()
+]
