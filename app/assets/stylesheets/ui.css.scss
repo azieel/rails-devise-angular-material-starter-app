@@ -101,4 +101,41 @@ img.flag_img{
 span.flag_label{
     margin-left:10px;
     line-height: 0px;
+} 
+
+//=================================================================
+//  Animations
+//=================================================================
+.right.ng-enter{
+    -webkit-animation-name: slideInRight;
+    -o-animation-name: slideInRight;
+    -moz-animation-name: slideInRight;
+    animation-name: slideInRight; 
+}
+.right.ng-leave{
+    -webkit-animation-name: slideOutRight;
+    -o-animation-name: slideOutRight;
+    -moz-animation-name: slideOutRight;
+    animation-name: slideOutRight; 
+}
+
+.fade-layout.ng-enter-active{
+    -webkit-animation-duration:0.5s;
+    -moz-animation-duration:0.5s;
+    -o-animation-duration:0.5s;
+    animation-duration:0.5s;
+    -webkit-animation-name: slideInRight;
+    -moz-animation-name: slideInRight;
+    -o-animation-name: slideInRight;
+    animation-name: slideInRight;
+}
+.fade-layout.ng-leave{
+    -webkit-animation-duration:0.5s;
+    -moz-animation-duration:0.5s;
+    -o-animation-duration:0.5s;
+    animation-duration:0.5s;
+    -webkit-animation-name: slideOutLeft;
+    -moz-animation-name: slideOutLeft;
+    -o-animation-name: slideOutLeft;
+    animation-name: slideOutLeft;
 }
