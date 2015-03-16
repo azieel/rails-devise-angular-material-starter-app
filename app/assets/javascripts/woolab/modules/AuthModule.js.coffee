@@ -33,6 +33,7 @@ AuthModule = angular.module('AuthModule', [
 
         #Check if state is free or protected
         $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
+            console.log accessGranted
             accessGranted = true if in_array(toState.url, freeUrl)
 
         #Initialize 401 Interceptor on devise:unauthorized event and redirect if url is not free
