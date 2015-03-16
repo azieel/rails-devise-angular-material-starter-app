@@ -1,10 +1,5 @@
 FactoryGirl.define do
-
-    factory :user do |f|
-        f.email {'admin@mail.com'}
-        f.password {'52145214'}
-    end
-
+    
     factory :admin do |f|
         f.first_name {"tyler" }
         f.last_name { "durden" }
