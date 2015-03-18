@@ -4,6 +4,7 @@ angular.module('BaseModule', [
     'ui.router'
     'templates'
     'ngMessages'
+    'ngTouch'
     'ngMaterial'
     'restangular'
 ])

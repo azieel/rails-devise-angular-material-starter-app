@@ -10,6 +10,7 @@
 //= require angular-ui-router
 //= require angular-aria
 //= require angular-animate
+//= require angular-touch
 //= require angular-material
 //= require angular-rails-templates
 //= require angular-devise
