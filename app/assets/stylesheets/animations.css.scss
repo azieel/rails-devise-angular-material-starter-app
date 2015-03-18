@@ -7441,6 +7441,11 @@ Copyright (c) 2015 Daniel Eden
 /* 
   Init ui-rooter to work with ng-animate
 */
+
+body{
+  -webkit-tap-highlight-color: transparent;
+}
+
 .ng-enter, .ng-leave{
   -webkit-animation-duration:1s;
      -moz-animation-duration:1s;
@@ -7467,3 +7472,11 @@ Copyright (c) 2015 Daniel Eden
               animation-play-state: running;
     }
   }
+.ng-leave {
+    z-index: 1054;
+    -webkit-backface-visibility: hidden;
+}
+.ng-enter {
+  z-index: 1053;
+  -webkit-backface-visibility: hidden;
+}
