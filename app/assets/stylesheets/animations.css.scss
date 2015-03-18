@@ -7408,56 +7408,23 @@ Copyright (c) 2015 Daniel Eden
     -o-transition:all .5s ease-in-out;
     transition:all .5s ease-in-out;
 }
-
 [ui-view].ng-enter {
   opacity: 0;
-  -webkit-transform:scale3d(0.5, 0.5, 0.5);
-  -moz-transform:scale3d(0.5, 0.5, 0.5);
-  transform:scale3d(0.5, 0.5, 0.5);
 }
-
 [ui-view].ng-enter-active {
   opacity: 1;
-  -webkit-transform:scale3d(1, 1, 1);
-  -moz-transform:scale3d(1, 1, 1);
-  transform:scale3d(1, 1, 1);
 }
-
 [ui-view].ng-leave {
   opacity: 1; 
-  -webkit-transform:translate3d(0, 0, 0);
-  -moz-transform:translate3d(0, 0, 0);
-  transform:translate3d(0, 0, 0);
 }
-
 [ui-view].ng-leave-active {
   opacity: 0;
-  -webkit-transform:translate3d(100px, 0, 0);
-  -moz-transform:translate3d(100px, 0, 0);
-  transform:translate3d(100px, 0, 0);
 }
 
 
 /* 
   Init ui-rooter to work with ng-animate
 */
-
-body{
-  -webkit-tap-highlight-color: transparent;
-}
-
-.ng-enter, .ng-leave{
-  -webkit-animation-duration:1s;
-     -moz-animation-duration:1s;
-       -o-animation-duration:1s;
-          animation-duration:1s;
-  -webkit-animation-fill-mode:both;
-     -moz-animation-fill-mode:both;
-       -o-animation-fill-mode:both;
-          animation-fill-mode:both;
-}
-
-
 .ng-enter {
     visibility: hidden;
     -webkit-animation-play-state: paused;
@@ -7472,26 +7439,3 @@ body{
               animation-play-state: running;
     }
   }
-  .ng-leave {
-    visibility: visible;
-      -webkit-animation-play-state: running;
-         -moz-animation-play-state: running;
-           -o-animation-play-state: running;
-              animation-play-state: running;
-    
-    &.ng-leave-active {
-    visibility: hidden;
-    -webkit-animation-play-state: paused;
-       -moz-animation-play-state: paused;
-         -o-animation-play-state: paused;
-            animation-play-state: paused;  
-    }
-  }
-.ng-leave {
-    z-index: 1054;
-    -webkit-backface-visibility: hidden;
-}
-.ng-enter {
-  z-index: 1053;
-  -webkit-backface-visibility: hidden;
-}
