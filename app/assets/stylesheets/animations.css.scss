@@ -7472,6 +7472,20 @@ body{
               animation-play-state: running;
     }
   }
+  .ng-leave {
+    visibility: hidden;
+    -webkit-animation-play-state: paused;
+       -moz-animation-play-state: paused;
+         -o-animation-play-state: paused;
+            animation-play-state: paused;
+    &.ng-leave-active {
+      visibility: visible;
+      -webkit-animation-play-state: running;
+         -moz-animation-play-state: running;
+           -o-animation-play-state: running;
+              animation-play-state: running;
+    }
+  }
 .ng-leave {
     z-index: 1054;
     -webkit-backface-visibility: hidden;
