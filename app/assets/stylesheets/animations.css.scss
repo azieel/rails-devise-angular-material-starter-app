@@ -7408,19 +7408,12 @@ Copyright (c) 2015 Daniel Eden
     -o-transition:all .5s ease-in-out;
     transition:all .5s ease-in-out;
 }
-[ui-view].ng-enter {
+[ui-view].ng-enter, [ui-view].ng-leave-active {
   opacity: 0;
 }
-[ui-view].ng-enter-active {
+[ui-view].ng-enter-active, [ui-view].ng-leave {
   opacity: 1;
 }
-[ui-view].ng-leave {
-  opacity: 1; 
-}
-[ui-view].ng-leave-active {
-  opacity: 0;
-}
-
 
 /* 
   Init ui-rooter to work with ng-animate
@@ -7439,3 +7432,7 @@ Copyright (c) 2015 Daniel Eden
               animation-play-state: running;
     }
   }
+/* Fix inputs on ios */
+  input, button, textarea, select {
+    -webkit-transform: translate3d(0,0,0);
+}
