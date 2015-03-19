@@ -5,3 +5,7 @@ angular.module('UiModule', [])
         #load ui translations
         $translatePartialLoaderProvider.addPart('ui')
 ]
+.run ["$rootScope", "$state", "promiseTracker"
+    ($rootScope, $state, promiseTracker) ->
+        $rootScope.loadingTracker = promiseTracker()
+]
