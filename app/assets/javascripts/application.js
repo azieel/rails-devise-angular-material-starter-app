@@ -20,6 +20,7 @@
 //= require_self
 //= require lodash
 //= require restangular
+//= require angular-promise-tracker
 
 
 // Require app main files

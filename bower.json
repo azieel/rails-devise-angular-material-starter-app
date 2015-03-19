@@ -12,7 +12,8 @@
       "angular-translate-loader-partial": "latest",
       "material-design-iconic-font": "latest",
       "restangular": "latest",
-      "angular-touch": "latest"
+      "angular-touch": "latest",
+      "angular-promise-tracker": "latest"
     }
   }
 }

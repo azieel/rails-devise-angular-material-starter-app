@@ -7,6 +7,7 @@ angular.module('BaseModule', [
     'ngTouch'
     'ngMaterial'
     'restangular'
+    'ajoslin.promise-tracker'
 ])
 .config ["$mdThemingProvider", "RestangularProvider"
     ($mdThemingProvider, RestangularProvider) ->
