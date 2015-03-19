@@ -1,3 +1,7 @@
+//=================================================================
+//  Fixs layout
+//=================================================================
+
 body{
     overflow:hidden;
 }
@@ -106,20 +110,69 @@ span.flag_label{
 //=================================================================
 //  Animations
 //=================================================================
+
+
+/*  INIT DES ANIMS */
+.ui-view-container {
+  position: relative;
+}
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;
+}
+[ui-view].ng-enter, [ui-view].ng-leave-active {
+  opacity: 0;
+  z-index: 8888;
+}
+[ui-view].ng-enter-active, [ui-view].ng-leave {
+  opacity: 1;
+  z-index: 9999;
+}
+
+.ng-enter {
+    visibility: hidden;
+    -webkit-animation-play-state: paused;
+       -moz-animation-play-state: paused;
+         -o-animation-play-state: paused;
+            animation-play-state: paused;
+    &.ng-enter-active {
+      visibility: visible;
+      -webkit-animation-play-state: running;
+         -moz-animation-play-state: running;
+           -o-animation-play-state: running;
+              animation-play-state: running;
+    }
+  }
+
+
 .right.ng-enter{
+    -webkit-animation-duration:0.5s;
+    -moz-animation-duration:0.5s;
+    -o-animation-duration:0.5s;
+    animation-duration:0.5s;
     -webkit-animation-name: slideInRight;
     -o-animation-name: slideInRight;
     -moz-animation-name: slideInRight;
     animation-name: slideInRight; 
 }
 .right.ng-leave{
+    -webkit-animation-duration:0.5s;
+    -moz-animation-duration:0.5s;
+    -o-animation-duration:0.5s;
+    animation-duration:0.5s;
     -webkit-animation-name: slideOutRight;
     -o-animation-name: slideOutRight;
     -moz-animation-name: slideOutRight;
     animation-name: slideOutRight; 
 }
 
-.fade-layout.ng-enter-active{
+.fade-layout.ng-enter{
     -webkit-animation-duration:0.5s;
     -moz-animation-duration:0.5s;
     -o-animation-duration:0.5s;
@@ -139,3 +192,13 @@ span.flag_label{
     -o-animation-name: slideOutLeft;
     animation-name: slideOutLeft;
 }
+
+//=================================================================
+//  Fixs IOS
+//=================================================================
+
+/* Fix inputs on ios */
+  input, button, textarea, select {
+    -webkit-transform: translate3d(0,0,0);
+}
+

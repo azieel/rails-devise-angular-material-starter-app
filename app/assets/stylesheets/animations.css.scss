@@ -7395,44 +7395,4 @@ Copyright (c) 2015 Daniel Eden
        animation-name: slideOutUp;
 }
 
-.ui-view-container {
-  position: relative;
-}
 
-[ui-view].ng-enter, [ui-view].ng-leave {
-  position: absolute;
-  left: 0;
-  right: 0;
-  -webkit-transition:all .5s ease-in-out;
-    -moz-transition:all .5s ease-in-out;
-    -o-transition:all .5s ease-in-out;
-    transition:all .5s ease-in-out;
-}
-[ui-view].ng-enter, [ui-view].ng-leave-active {
-  opacity: 0;
-}
-[ui-view].ng-enter-active, [ui-view].ng-leave {
-  opacity: 1;
-}
-
-/* 
-  Init ui-rooter to work with ng-animate
-*/
-.ng-enter {
-    visibility: hidden;
-    -webkit-animation-play-state: paused;
-       -moz-animation-play-state: paused;
-         -o-animation-play-state: paused;
-            animation-play-state: paused;
-    &.ng-enter-active {
-      visibility: visible;
-      -webkit-animation-play-state: running;
-         -moz-animation-play-state: running;
-           -o-animation-play-state: running;
-              animation-play-state: running;
-    }
-  }
-/* Fix inputs on ios */
-  input, button, textarea, select {
-    -webkit-transform: translate3d(0,0,0);
-}
