@@ -37,6 +37,7 @@ AuthModule = angular.module('AuthModule', [
 
         #Initialize 401 Interceptor on devise:unauthorized event and redirect if url is not free
         $rootScope.$on 'devise:unauthorized', (event, reponse, deferred)->
+            $rootScope.loadingTracker.cancel()
             if !accessGranted
                 customToast("error", 'auth.toast_messages.unauthorized')
                 $state.go('base.login') 

@@ -1,6 +1,6 @@
 angular.module('AuthModule').controller("LoginCtrl", [
-    '$scope', 'Auth', "$state", "$http", "customToast", "passwordRecoveryService", "$translate", "$translatePartialLoader", "$filter"
-    ($scope, Auth, $state, $http, customToast, passwordRecoveryService, $translate, $translatePartialLoader, $filter)->
+    '$rootScope', '$scope', 'Auth', "$state", "customToast", "passwordRecoveryService"
+    ($rootScope, $scope, Auth, $state, customToast, passwordRecoveryService)->
         console.log 'LoginCtrl'
 
         $scope.user = {}
@@ -24,5 +24,7 @@ angular.module('AuthModule').controller("LoginCtrl", [
                 email: $scope.user.email,
                 password: $scope.user.password
             }
-            Auth.login(credentials)
+            query = Auth.login(credentials)
+            $rootScope.loadingTracker.addPromise(query)
+
 ])

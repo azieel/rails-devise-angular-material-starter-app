@@ -1,11 +1,12 @@
 angular.module('AuthModule').controller("PasswordCtrl", [
-    '$scope', 'Auth', "$state", "customToast", "passwordRecoveryService", "$rootScope", "$translate"
-    ($scope, Auth, $state, customToast, passwordRecoveryService, $rootScope, $translate)->
+    '$scope', 'Auth', "$state", "customToast", "passwordRecoveryService", "$rootScope"
+    ($scope, Auth, $state, customToast, passwordRecoveryService, $rootScope)->
         console.log 'PasswordCtrl'        
 
         $scope.sendRecoveryMail = () ->
             email = $scope.user.email
             Auth.password_recover(email)
+
 
         $rootScope.$on('devise:failed-password-token', (event, response)->
             customToast("error", 'auth.toast_messages.email_not_found')

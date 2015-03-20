@@ -10,7 +10,7 @@ angular.module('AuthModule').factory 'passwordRecoveryService', ['$rootScope', '
         }
         config.data = {}
         config.data['user'] = {email: email}
-        $http(config).then(
+        query = $http(config).then(
             (response)->
                 $rootScope.$broadcast 'devise:new-password-token', response
                 response
@@ -18,6 +18,8 @@ angular.module('AuthModule').factory 'passwordRecoveryService', ['$rootScope', '
                 $rootScope.$broadcast 'devise:failed-password-token', error
                 error
         )
+        $rootScope.loadingTracker.addPromise(query)
+        query
     extend.password_change = (data)->
         path = "users/password.json"
         config = {
@@ -26,7 +28,7 @@ angular.module('AuthModule').factory 'passwordRecoveryService', ['$rootScope', '
         }
         config.data = {}
         config.data['user'] = data
-        $http(config).then(
+        query = $http(config).then(
             (response)->
                 $rootScope.$broadcast 'devise:reset-password-success', response
                 response
@@ -34,5 +36,7 @@ angular.module('AuthModule').factory 'passwordRecoveryService', ['$rootScope', '
                 $rootScope.$broadcast 'devise:reset-password-failure', error
                 error
         )
+        $rootScope.loadingTracker.addPromise(query)
+        query
     extend
 ]

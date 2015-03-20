@@ -25,6 +25,27 @@ md-progress-linear .md-container {
 }
 
 //=================================================================
+//  Icon size style
+//=================================================================
+.md-lg {
+  font-size: 1.5em!important;
+  line-height: .5em;
+  vertical-align: -20%;
+}
+.md-2x {
+  font-size: 2em!important;
+}
+.md-3x {
+  font-size: 3em!important;
+}
+.md-4x {
+  font-size: 4em!important;
+}
+.md-5x {
+  font-size: 5em!important;
+}
+
+//=================================================================
 //  Custom errors style
 //=================================================================
 .form-error{
