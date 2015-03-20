@@ -17,6 +17,13 @@ md-content{
     padding:15px;
 }
 
+md-progress-linear{
+    z-index: 9999;
+}
+md-progress-linear .md-container {
+    top: 0px;
+}
+
 //=================================================================
 //  Custom errors style
 //=================================================================

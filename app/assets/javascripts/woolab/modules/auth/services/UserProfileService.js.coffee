@@ -5,7 +5,9 @@ angular.module('AuthModule').factory 'UserProfileService', ['$rootScope', 'Auth'
     extend.get_user_profile = ()->
         currentUser = extend._currentUser
         profileRoute = currentUser.role_type.toLowerCase() + 's'
-        Restangular.one(profileRoute, currentUser.role_id).get()
+        query = Restangular.one(profileRoute, currentUser.role_id).get()
+        $rootScope.loadingTracker.addPromise(query)
+        query
 
     extend.update_user_profile = (profile) ->
         
@@ -23,7 +25,7 @@ angular.module('AuthModule').factory 'UserProfileService', ['$rootScope', 'Auth'
                 password: profile.user_attributes.password
             
         #Restangular query for update profile (return promise)
-        Restangular.one(profileRoute, profile.user_attributes.role_id)
+        query = Restangular.one(profileRoute, profile.user_attributes.role_id)
         .put(profile)
         .then(
             (new_profile) ->
@@ -36,5 +38,7 @@ angular.module('AuthModule').factory 'UserProfileService', ['$rootScope', 'Auth'
                 else 
                     customToast("error", 'auth.toast_messages.edit_profile_failure')
         )
+        $rootScope.loadingTracker.addPromise(query)
+        query
     extend
 ]
