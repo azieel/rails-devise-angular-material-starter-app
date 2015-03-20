@@ -2,6 +2,6 @@
 angular.module('WooLab').directive("fullHeight", () ->
     link:
         (scope, element, attributes)->
-            height = $(window).height() - 48
-            $(element).height(height)
+            height = $(window).height() - parseInt(attributes.fullHeight)
+            $(element).innerHeight(height)
 )

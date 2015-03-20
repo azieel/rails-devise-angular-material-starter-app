@@ -1,8 +1,8 @@
 <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="editProfilePanel" >
-      <md-toolbar>
+      <md-toolbar id="editprofile-title" md-scroll-shrink>
         <h1 class="md-toolbar-tools" translate>{{ 'auth.edit_profile_title' }}</h1>
       </md-toolbar>
-      <md-content class="md-padding" >
+      <md-content class="md-padding" full-height="84">
         <form name="userForm" ng-submit="edit_profile()">
           <md-button type="submit" class="md-primary ">
             <span translate>{{ 'auth.form.edit_profile_submit' }}</span>

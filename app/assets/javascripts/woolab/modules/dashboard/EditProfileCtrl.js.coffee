@@ -4,7 +4,6 @@ angular.module('DashboardModule').controller("EditProfileCtrl", [
         console.log "EditProfileCtrl"
 
         $scope.$on 'openProfilePanel', (event, args) ->
-            $mdSidenav('editProfilePanel').open()
             Auth.get_user_profile().then(
                 (profile) ->
                     $scope.profile = {}
@@ -18,6 +17,7 @@ angular.module('DashboardModule').controller("EditProfileCtrl", [
                     $scope.profile.user_attributes = profile.user
                     $scope.profile.user_attributes.password = ""
                     $scope.profile.user_attributes.password_confirmation = ""
+                    $mdSidenav('editProfilePanel').open()
             )
         
         $scope.edit_profile = () ->
